@@ -1,1 +1,1 @@
-Sitemap: https://fastpages.fast.ai/sitemap.xml
+Sitemap: https://thegerbil21.github.io/firstfastpages/sitemap.xml

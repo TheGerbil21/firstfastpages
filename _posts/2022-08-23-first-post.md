@@ -1,9 +1,9 @@
 ---
 toc: true
 layout: post
-description: A minimal example of using markdown with fastpages.
+description: Jeffrey's example of using markdown with fastpages.
 categories: [markdown]
-title: An Example Markdown Post
+title: Jeffrey's First Markdown Post!
 ---
 # Hello APCSP
 
@@ -34,5 +34,4 @@ The Classes I'm taking this trimester:
 
 ## A Beautiful Selfie of Me:
 
-![*This was taken two years ago!*](images/IMG_20200317_183827 (2).jpg)
-
+![*This was taken two years ago!*](https://user-images.githubusercontent.com/51098969/186348727-4655dacd-5f7b-4133-9167-54d0f23b1d79.jpg)

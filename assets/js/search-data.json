@@ -2,10 +2,10 @@
   
     
         "post0": {
-            "title": "First Post",
-            "content": "Hello APCSP! . This is my very first markdown post. .",
-            "url": "https://thegerbil21.github.io/firstfastpages/2022/08/23/first-post.html",
-            "relUrl": "/2022/08/23/first-post.html",
+            "title": "An Example Markdown Post",
+            "content": "Hello APCSP . Welcome to my first markdown post! . My name is Jeffrey Lee, and I’m excited to be a part of this class! I am completely new to coding and having a blast learning about all these tools! . Links: . Here’s a link to my Spotify. Feel free to follow me! . . Lists: . A couple of things I enjoy doing in my spare time: . Basketball | Piano | Gaming (Valorant) | . The Classes I’m taking this trimester: . AP Statistics | Expos Read/Write | AP CSP | Honors POE | . A Beautiful Selfie of Me: . .",
+            "url": "https://thegerbil21.github.io/firstfastpages/markdown/2022/08/23/first-post.html",
+            "relUrl": "/markdown/2022/08/23/first-post.html",
             "date": " • Aug 23, 2022"
         }
         

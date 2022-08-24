@@ -34,5 +34,5 @@ The Classes I'm taking this trimester:
 
 ## A Beautiful Selfie of Me:
 
-![]({{ site.baseurl }}/images/logo.png "fast.ai's logo")
+![*This was taken two years ago!*](images/IMG_20200317_183827 (2).jpg)
 

@@ -132,35 +132,50 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Take user Input</span>
-<span class="n">echo</span> <span class="s2">&quot;Enter Two numbers : &quot;</span>
-<span class="n">read</span> <span class="n">a</span>
-<span class="n">read</span> <span class="n">b</span>
+<div class=" highlight hl-bash"><pre><span></span><span class="c1"># Take user Input</span>
+<span class="nb">echo</span> <span class="s2">&quot;Enter Two numbers : &quot;</span>
+<span class="nb">read</span> a
+<span class="nb">read</span> b
 
 <span class="c1"># Input type of operation</span>
-<span class="n">echo</span> <span class="s2">&quot;Enter Choice :&quot;</span>
-<span class="n">echo</span> <span class="s2">&quot;1. Addition&quot;</span>
-<span class="n">echo</span> <span class="s2">&quot;2. Subtraction&quot;</span>
-<span class="n">echo</span> <span class="s2">&quot;3. Multiplication&quot;</span>
-<span class="n">echo</span> <span class="s2">&quot;4. Division&quot;</span>
-<span class="n">read</span> <span class="n">ch</span>
+<span class="nb">echo</span> <span class="s2">&quot;Enter Choice :&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;1. Addition&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;2. Subtraction&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;3. Multiplication&quot;</span>
+<span class="nb">echo</span> <span class="s2">&quot;4. Division&quot;</span>
+<span class="nb">read</span> ch
 
 <span class="c1"># Switch Case to perform</span>
 <span class="c1"># calculator operations</span>
-<span class="n">case</span> <span class="err">$</span><span class="n">ch</span> <span class="ow">in</span>
-<span class="mi">1</span><span class="p">)</span><span class="n">res</span><span class="o">=</span><span class="err">`</span><span class="n">echo</span> <span class="err">$</span><span class="n">a</span> <span class="o">+</span> <span class="err">$</span><span class="n">b</span> <span class="o">|</span> <span class="n">bc</span><span class="err">`</span>
+<span class="k">case</span> <span class="nv">$ch</span> in
+<span class="m">1</span><span class="o">)</span><span class="nv">res</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nv">$a</span> + <span class="nv">$b</span> <span class="p">|</span> bc<span class="sb">`</span>
 <span class="p">;;</span>
-<span class="mi">2</span><span class="p">)</span><span class="n">res</span><span class="o">=</span><span class="err">`</span><span class="n">echo</span> <span class="err">$</span><span class="n">a</span> <span class="o">-</span> <span class="err">$</span><span class="n">b</span> <span class="o">|</span> <span class="n">bc</span><span class="err">`</span>
+<span class="m">2</span><span class="o">)</span><span class="nv">res</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nv">$a</span> - <span class="nv">$b</span> <span class="p">|</span> bc<span class="sb">`</span>
 <span class="p">;;</span>
-<span class="mi">3</span><span class="p">)</span><span class="n">res</span><span class="o">=</span><span class="err">`</span><span class="n">echo</span> <span class="err">$</span><span class="n">a</span> \<span class="o">*</span> <span class="err">$</span><span class="n">b</span> <span class="o">|</span> <span class="n">bc</span><span class="err">`</span>
+<span class="m">3</span><span class="o">)</span><span class="nv">res</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="nv">$a</span> <span class="se">\*</span> <span class="nv">$b</span> <span class="p">|</span> bc<span class="sb">`</span>
 <span class="p">;;</span>
-<span class="mi">4</span><span class="p">)</span><span class="n">res</span><span class="o">=</span><span class="err">`</span><span class="n">echo</span> <span class="s2">&quot;scale=2; $a / $b&quot;</span> <span class="o">|</span> <span class="n">bc</span><span class="err">`</span>
+<span class="m">4</span><span class="o">)</span><span class="nv">res</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="s2">&quot;scale=2; </span><span class="nv">$a</span><span class="s2"> / </span><span class="nv">$b</span><span class="s2">&quot;</span> <span class="p">|</span> bc<span class="sb">`</span>
 <span class="p">;;</span>
-<span class="n">esac</span>
-<span class="n">echo</span> <span class="s2">&quot;Result : $res&quot;</span>
+<span class="k">esac</span>
+<span class="nb">echo</span> <span class="s2">&quot;Result : </span><span class="nv">$res</span><span class="s2">&quot;</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Enter Two numbers : 
+
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 

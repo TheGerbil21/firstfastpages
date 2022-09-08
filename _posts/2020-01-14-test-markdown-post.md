@@ -85,7 +85,7 @@ key: value
 
 ## Tables
 
-| Column 1 | Column 2 |
+| Column 1 | Column 2 | 
 |-|-|
 | A thing | Another thing |
 

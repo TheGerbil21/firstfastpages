@@ -14,7 +14,7 @@
     
         ,"post1": {
             "title": "Project Design Proposal",
-            "content": "",
+            "content": "Project Purpose + Plan . Our team&#39;s current plan is to use a search bar feature alongside a growing dictionary of basketball teams. You could input the name of your favorite team, and the program will redirect the user to a displayed page of their team&#39;s statistics images and most valuable players. . College Board Criteria .",
             "url": "https://thegerbil21.github.io/firstfastpages/collegeboard/python_lists",
             "relUrl": "/collegeboard/python_lists",
             "date": " • Oct 7, 2022"

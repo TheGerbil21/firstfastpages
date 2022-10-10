@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      5 min read
     
 </span></p>
 
@@ -148,6 +148,20 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;, &#39;h&#39;, &#39;i&#39;, &#39;j&#39;, &#39;k&#39;, &#39;l&#39;, &#39;m&#39;, &#39;n&#39;, &#39;o&#39;, &#39;p&#39;, &#39;q&#39;, &#39;r&#39;, &#39;s&#39;, &#39;t&#39;, &#39;u&#39;, &#39;v&#39;, &#39;w&#39;, &#39;x&#39;, &#39;y&#39;, &#39;z&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -188,18 +202,9 @@ window.onload = wrap_img;
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-03-AP-error_testing.ipynb Cell 6</span> in <span class="ansi-cyan-fg">&lt;cell line: 5&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-03-AP-error_testing.ipynb#W5sdnNjb2RlLXJlbW90ZQ%3D%3D?line=2&#39;&gt;3&lt;/a&gt;</span> i = 0
-<span class="ansi-green-intense-fg ansi-bold">      &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-03-AP-error_testing.ipynb#W5sdnNjb2RlLXJlbW90ZQ%3D%3D?line=4&#39;&gt;5&lt;/a&gt;</span> while i &lt; 26:
-<span class="ansi-green-fg">----&gt; &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-03-AP-error_testing.ipynb#W5sdnNjb2RlLXJlbW90ZQ%3D%3D?line=5&#39;&gt;6&lt;/a&gt;</span>     if alphabetList[i] == letter:
-<span class="ansi-green-intense-fg ansi-bold">      &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-03-AP-error_testing.ipynb#W5sdnNjb2RlLXJlbW90ZQ%3D%3D?line=6&#39;&gt;7&lt;/a&gt;</span>         print(&#34;The letter &#34; + letter + &#34; is the &#34; + str(i) + &#34; letter in the alphabet&#34;)
-<span class="ansi-green-intense-fg ansi-bold">      &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-03-AP-error_testing.ipynb#W5sdnNjb2RlLXJlbW90ZQ%3D%3D?line=7&#39;&gt;8&lt;/a&gt;</span>     i += 1
-
-<span class="ansi-red-fg">NameError</span>: name &#39;alphabetList&#39; is not defined</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The letter a is the 0 letter in the alphabet
+</pre>
 </div>
 </div>
 
@@ -230,13 +235,27 @@ window.onload = wrap_img;
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">letter</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What letter would you like to check?&quot;</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">alphabetList</span><span class="p">:</span>
-    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">letter</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The letter &quot;</span> <span class="o">+</span> <span class="n">letter</span> <span class="o">+</span> <span class="s2">&quot; is the &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">count</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; letter in the alphabet&quot;</span><span class="p">)</span>
     <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The letter a is the 1 letter in the alphabet
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -274,6 +293,20 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[0, 2, 4, 6, 8, 10]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -302,6 +335,20 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1, 3, 5, 7, 9]
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -339,6 +386,20 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[0, 2, 4, 6, 8, 10]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -367,6 +428,20 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[0, 3, 6, 9]
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -410,6 +485,20 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[0, 0, 2, 4, 5, 6, 8, 10, 10, 12, 14, 15, 16, 18, 20, 20, 22, 24, 25, 26, 28, 30, 30, 32, 34, 35, 36, 38, 40, 40, 42, 44, 45, 46, 48, 50, 50, 52, 54, 55, 56, 58, 60, 60, 62, 64, 65, 66, 68, 70, 70, 72, 74, 75, 76, 78, 80, 80, 82, 84, 85, 86, 88, 90, 90, 92, 94, 95, 96, 98]
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -478,6 +567,73 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Menu
+burger  $3.99
+fries  $1.99
+drink  $0.99
+Please select an item from the menu.
+Selected: burger . Price: 3.99
+Selected: fries . Price: 1.99
+Selected: drink . Price: 0.99
+Selected: drink . Price: 0.99
+Incorrect
+Incorrect
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">KeyboardInterrupt</span>                         Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-10-AP-error_testing.ipynb Cell 20</span> in <span class="ansi-cyan-fg">&lt;cell line: 32&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-10-AP-error_testing.ipynb#X25sdnNjb2RlLXJlbW90ZQ%3D%3D?line=28&#39;&gt;29&lt;/a&gt;</span>                 print (&#39;Incorrect&#39;)
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-10-AP-error_testing.ipynb#X25sdnNjb2RlLXJlbW90ZQ%3D%3D?line=29&#39;&gt;30&lt;/a&gt;</span>     return total
+<span class="ansi-green-fg">---&gt; &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-10-AP-error_testing.ipynb#X25sdnNjb2RlLXJlbW90ZQ%3D%3D?line=31&#39;&gt;32&lt;/a&gt;</span> total = menuloop()
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-10-AP-error_testing.ipynb#X25sdnNjb2RlLXJlbW90ZQ%3D%3D?line=32&#39;&gt;33&lt;/a&gt;</span> print(total)
+
+<span class="ansi-green-intense-fg ansi-bold">/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-10-AP-error_testing.ipynb Cell 20</span> in <span class="ansi-cyan-fg">menuloop</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-10-AP-error_testing.ipynb#X25sdnNjb2RlLXJlbW90ZQ%3D%3D?line=20&#39;&gt;21&lt;/a&gt;</span> choice = &#39;&#39;
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-10-AP-error_testing.ipynb#X25sdnNjb2RlLXJlbW90ZQ%3D%3D?line=21&#39;&gt;22&lt;/a&gt;</span> while choice != &#39;done&#39;:
+<span class="ansi-green-fg">---&gt; &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-10-AP-error_testing.ipynb#X25sdnNjb2RlLXJlbW90ZQ%3D%3D?line=22&#39;&gt;23&lt;/a&gt;</span>     choice = input(&#39;Please select an item from the menu.&#39;)
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-10-AP-error_testing.ipynb#X25sdnNjb2RlLXJlbW90ZQ%3D%3D?line=23&#39;&gt;24&lt;/a&gt;</span>     if choice != &#39;done&#39;:
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-10-AP-error_testing.ipynb#X25sdnNjb2RlLXJlbW90ZQ%3D%3D?line=24&#39;&gt;25&lt;/a&gt;</span>         if choice in menu :
+
+File <span class="ansi-green-fg">~/.local/lib/python3.8/site-packages/ipykernel/kernelbase.py:1177</span>, in <span class="ansi-cyan-fg">Kernel.raw_input</span><span class="ansi-blue-fg">(self, prompt)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1173</span> if not self._allow_stdin:
+<span class="ansi-green-intense-fg ansi-bold">   1174</span>     raise StdinNotImplementedError(
+<span class="ansi-green-intense-fg ansi-bold">   1175</span>         &#34;raw_input was called, but this frontend does not support input requests.&#34;
+<span class="ansi-green-intense-fg ansi-bold">   1176</span>     )
+<span class="ansi-green-fg">-&gt; 1177</span> return self._input_request(
+<span class="ansi-green-intense-fg ansi-bold">   1178</span>     str(prompt),
+<span class="ansi-green-intense-fg ansi-bold">   1179</span>     self._parent_ident[&#34;shell&#34;],
+<span class="ansi-green-intense-fg ansi-bold">   1180</span>     self.get_parent(&#34;shell&#34;),
+<span class="ansi-green-intense-fg ansi-bold">   1181</span>     password=False,
+<span class="ansi-green-intense-fg ansi-bold">   1182</span> )
+
+File <span class="ansi-green-fg">~/.local/lib/python3.8/site-packages/ipykernel/kernelbase.py:1219</span>, in <span class="ansi-cyan-fg">Kernel._input_request</span><span class="ansi-blue-fg">(self, prompt, ident, parent, password)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1216</span>             break
+<span class="ansi-green-intense-fg ansi-bold">   1217</span> except KeyboardInterrupt:
+<span class="ansi-green-intense-fg ansi-bold">   1218</span>     # re-raise KeyboardInterrupt, to truncate traceback
+<span class="ansi-green-fg">-&gt; 1219</span>     raise KeyboardInterrupt(&#34;Interrupted by user&#34;) from None
+<span class="ansi-green-intense-fg ansi-bold">   1220</span> except Exception:
+<span class="ansi-green-intense-fg ansi-bold">   1221</span>     self.log.warning(&#34;Invalid Message:&#34;, exc_info=True)
+
+<span class="ansi-red-fg">KeyboardInterrupt</span>: Interrupted by user</pre>
+</div>
+</div>
+
 </div>
 </div>
 

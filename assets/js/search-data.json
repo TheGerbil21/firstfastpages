@@ -25,7 +25,7 @@
     
         ,"post2": {
             "title": "Project Design Proposal",
-            "content": "Project Purpose + Plan . Our team&#39;s current plan is to use a search bar feature alongside a growing dictionary of basketball teams. You could input the name of your favorite team, and the program will redirect the user to a displayed page of their team&#39;s statistics images and most valuable players. . College Board Criteria .",
+            "content": "Project Purpose + Plan . Our team&#39;s current plan is to use a search bar feature alongside a growing dictionary of basketball teams. You could input the name of your favorite team, and the program will redirect the user to a displayed page of their team&#39;s statistics images and most valuable players. .",
             "url": "https://thegerbil21.github.io/firstfastpages/collegeboard/python_lists",
             "relUrl": "/collegeboard/python_lists",
             "date": " • Oct 7, 2022"
@@ -90,8 +90,8 @@
   
     
         ,"post8": {
-            "title": "Scrum Team Outline",
-            "content": "Project Purpose + Plan . Our team&#39;s current plan is to use a search bar feature alongside a growing dictionary of basketball teams. You could input the name of your favorite team, and the program will redirect the user to a displayed page of their team&#39;s statistics images and most valuable players. . Scrum Team Roles . My team and I decided on the following roles: . Jeffrey: Scrum Master | Luke: DevOps | Ethan: Frontend Developer | James: Backend Developer | . As SCRUM master, I will make sure my team is always on task and meetings the deadlines set by Mr. M. I will oversee general development and help out on all aspects of our project where needed. We intend to use HTML/CSS/JS for our frontend and Python on the backend. The DevOps pipeline will be powered by GitHub Actions + some hosting provider (AWS). . Here is a brief poster that my team and I created together to go over the SCRUM process in detail! .",
+            "title": "Scrum Team Outline + Project Purpose",
+            "content": "Our Project&#39;s Goals: . Our team&#39;s current plan is to use a search bar feature alongside a growing dictionary of basketball teams. You could input the name of your favorite team, and the program will redirect the user to a displayed page of their team&#39;s statistics images and most valuable players. We may decide to create or utilize an API to store and display our data to users. . Scrum Team Roles . My team and I decided on the following roles: . Jeffrey: Scrum Master | Luke: DevOps | Ethan: Frontend Developer | James: Backend Developer | . As SCRUM master, I will make sure my team is always on task and meetings the deadlines set by Mr. M. I will oversee general development and help out on all aspects of our project where needed. We intend to use HTML/CSS/JS for our frontend and Python on the backend. The DevOps pipeline will be powered by GitHub Actions + some hosting provider (AWS). . Scrum Poster . Here is a brief poster that my team and I created together to go over the SCRUM process in detail! . . College Board Criteria . Program Purpose and Function | Data Abstraction | Managing Complexity | Procedural Abstraction | Algorithm Implementation | Testing |",
             "url": "https://thegerbil21.github.io/firstfastpages/jupyter/2022/09/27/SCRUM-team.html",
             "relUrl": "/jupyter/2022/09/27/SCRUM-team.html",
             "date": " • Sep 27, 2022"

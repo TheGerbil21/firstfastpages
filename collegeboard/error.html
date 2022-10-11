@@ -531,39 +531,32 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">FrozenInstanceError</span>
-<span class="kn">from</span> <span class="nn">logging.handlers</span> <span class="kn">import</span> <span class="n">BufferingHandler</span>
-
-
-<span class="n">menu</span> <span class="o">=</span>  <span class="p">{</span><span class="s2">&quot;burger&quot;</span><span class="p">:</span> <span class="mf">3.99</span><span class="p">,</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">menu</span> <span class="o">=</span>  <span class="p">{</span><span class="s2">&quot;burger&quot;</span><span class="p">:</span> <span class="mf">3.99</span><span class="p">,</span>    <span class="c1"># creates the menu, its components, and each component&#39;s price.</span>
          <span class="s2">&quot;fries&quot;</span><span class="p">:</span> <span class="mf">1.99</span><span class="p">,</span>
-         <span class="s2">&quot;drink&quot;</span><span class="p">:</span> <span class="mf">0.99</span><span class="p">}</span>
-<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+         <span class="s2">&quot;drink&quot;</span><span class="p">:</span> <span class="mf">0.99</span><span class="p">,</span>
+         <span class="s2">&quot;checkout&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>     <span class="c1"># &#39;checkout&#39; is created in the table in order for it to be an interactive input.</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>                   <span class="c1"># creates the variable &#39;total&#39; and sets it to 0.</span>
 
-<span class="c1">#shows the user the menu and prompts them to select an item</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Menu&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">menu</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="s2">&quot;  $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">))</span> <span class="c1">#why does v have &quot;str&quot; n front of it?</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Menu&quot;</span><span class="p">)</span>               <span class="c1"># prints menu&#39;s components.</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">menu</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>    <span class="c1"># &#39;k&#39; = item&#39;s name. &#39;v&#39; = item&#39;s price(numeric value).</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="s2">&quot;  $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">))</span> <span class="c1">#str changes a numeric value (v) into a character that can be printed.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please select an item. Type &#39;checkout&#39; to finish your order.&quot;</span><span class="p">)</span> <span class="c1">#tells users what they can do.</span>
 
-<span class="c1">#ideally the code should prompt the user multiple times</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please select an item from the menu.&quot;</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">menuloop</span><span class="p">():</span>
-    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>   
-    <span class="n">choice</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-    <span class="k">while</span> <span class="n">choice</span> <span class="o">!=</span> <span class="s1">&#39;done&#39;</span><span class="p">:</span>
-        <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please select an item from the menu.&#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">choice</span> <span class="o">!=</span> <span class="s1">&#39;done&#39;</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">choice</span> <span class="ow">in</span> <span class="n">menu</span> <span class="p">:</span>
-                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Selected:&#39;</span><span class="p">,</span> <span class="n">choice</span> <span class="p">,</span> <span class="s1">&#39;. Price:&#39;</span><span class="p">,</span> <span class="n">menu</span><span class="p">[</span><span class="n">choice</span><span class="p">])</span>
-                <span class="n">total</span> <span class="o">+=</span>  <span class="n">menu</span> <span class="p">[</span><span class="n">choice</span><span class="p">]</span>
-            <span class="k">else</span><span class="p">:</span> 
-                <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Incorrect&#39;</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">total</span>
-
-<span class="n">total</span> <span class="o">=</span> <span class="n">menuloop</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">)</span>
+<span class="n">checkout</span> <span class="o">=</span> <span class="mi">0</span>                <span class="c1"># checkout created and set to 0.</span>
+<span class="k">while</span> <span class="n">checkout</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>        <span class="c1"># while loop connected to checkout.</span>
+    <span class="n">item</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please select an item from the menu Type &#39;checkout&#39; to finish.&quot;</span><span class="p">)</span> <span class="c1">#tells users what they can do.</span>
+    <span class="n">item</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>     <span class="c1">#changes input to lowercase to be user friendly.</span>
+    <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="s2">&quot;burger&quot;</span> <span class="ow">or</span> <span class="n">item</span> <span class="o">==</span> <span class="s2">&quot;fries&quot;</span> <span class="ow">or</span> <span class="n">item</span> <span class="o">==</span> <span class="s2">&quot;drink&quot;</span><span class="p">:</span> <span class="c1">#this if statement allows for muiltple inputs to have the same output.</span>
+        <span class="nb">print</span><span class="p">(</span> <span class="n">item</span><span class="p">,</span> <span class="s2">&quot;will be $&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">menu</span><span class="p">[</span><span class="n">item</span><span class="p">]))</span> <span class="c1">#prints item info.</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">menu</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>  <span class="c1"># adds the price of the item to total price.</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="s2">&quot;checkout&quot;</span><span class="p">:</span>
+            <span class="n">checkout</span> <span class="o">=</span> <span class="mi">1</span>    <span class="c1">#Changes value of checkout that ends while loop.</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Try again, that item is not on the menu&quot;</span><span class="p">)</span> <span class="c1">#In case user makes a typo or tpyes an unknown item.</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">myorder</span> <span class="o">=</span> <span class="s2">&quot;Your total is $</span><span class="si">{:.2f}</span><span class="s2">! Enjoy!&quot;</span>                <span class="c1">#source: w3shools.com Python String Formatting</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">myorder</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">total</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -580,57 +573,11 @@ window.onload = wrap_img;
 burger  $3.99
 fries  $1.99
 drink  $0.99
-Please select an item from the menu.
-Selected: burger . Price: 3.99
-Selected: fries . Price: 1.99
-Selected: drink . Price: 0.99
-Selected: drink . Price: 0.99
-Incorrect
-Incorrect
+checkout  $0
+Please select an item. Type &#39;checkout&#39; to finish your order.
+burger will be $3.99
+Your total is $3.99! Enjoy!
 </pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">KeyboardInterrupt</span>                         Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-10-AP-error_testing.ipynb Cell 20</span> in <span class="ansi-cyan-fg">&lt;cell line: 32&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-10-AP-error_testing.ipynb#X25sdnNjb2RlLXJlbW90ZQ%3D%3D?line=28&#39;&gt;29&lt;/a&gt;</span>                 print (&#39;Incorrect&#39;)
-<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-10-AP-error_testing.ipynb#X25sdnNjb2RlLXJlbW90ZQ%3D%3D?line=29&#39;&gt;30&lt;/a&gt;</span>     return total
-<span class="ansi-green-fg">---&gt; &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-10-AP-error_testing.ipynb#X25sdnNjb2RlLXJlbW90ZQ%3D%3D?line=31&#39;&gt;32&lt;/a&gt;</span> total = menuloop()
-<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-10-AP-error_testing.ipynb#X25sdnNjb2RlLXJlbW90ZQ%3D%3D?line=32&#39;&gt;33&lt;/a&gt;</span> print(total)
-
-<span class="ansi-green-intense-fg ansi-bold">/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-10-AP-error_testing.ipynb Cell 20</span> in <span class="ansi-cyan-fg">menuloop</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-10-AP-error_testing.ipynb#X25sdnNjb2RlLXJlbW90ZQ%3D%3D?line=20&#39;&gt;21&lt;/a&gt;</span> choice = &#39;&#39;
-<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-10-AP-error_testing.ipynb#X25sdnNjb2RlLXJlbW90ZQ%3D%3D?line=21&#39;&gt;22&lt;/a&gt;</span> while choice != &#39;done&#39;:
-<span class="ansi-green-fg">---&gt; &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-10-AP-error_testing.ipynb#X25sdnNjb2RlLXJlbW90ZQ%3D%3D?line=22&#39;&gt;23&lt;/a&gt;</span>     choice = input(&#39;Please select an item from the menu.&#39;)
-<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-10-AP-error_testing.ipynb#X25sdnNjb2RlLXJlbW90ZQ%3D%3D?line=23&#39;&gt;24&lt;/a&gt;</span>     if choice != &#39;done&#39;:
-<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-10-10-AP-error_testing.ipynb#X25sdnNjb2RlLXJlbW90ZQ%3D%3D?line=24&#39;&gt;25&lt;/a&gt;</span>         if choice in menu :
-
-File <span class="ansi-green-fg">~/.local/lib/python3.8/site-packages/ipykernel/kernelbase.py:1177</span>, in <span class="ansi-cyan-fg">Kernel.raw_input</span><span class="ansi-blue-fg">(self, prompt)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1173</span> if not self._allow_stdin:
-<span class="ansi-green-intense-fg ansi-bold">   1174</span>     raise StdinNotImplementedError(
-<span class="ansi-green-intense-fg ansi-bold">   1175</span>         &#34;raw_input was called, but this frontend does not support input requests.&#34;
-<span class="ansi-green-intense-fg ansi-bold">   1176</span>     )
-<span class="ansi-green-fg">-&gt; 1177</span> return self._input_request(
-<span class="ansi-green-intense-fg ansi-bold">   1178</span>     str(prompt),
-<span class="ansi-green-intense-fg ansi-bold">   1179</span>     self._parent_ident[&#34;shell&#34;],
-<span class="ansi-green-intense-fg ansi-bold">   1180</span>     self.get_parent(&#34;shell&#34;),
-<span class="ansi-green-intense-fg ansi-bold">   1181</span>     password=False,
-<span class="ansi-green-intense-fg ansi-bold">   1182</span> )
-
-File <span class="ansi-green-fg">~/.local/lib/python3.8/site-packages/ipykernel/kernelbase.py:1219</span>, in <span class="ansi-cyan-fg">Kernel._input_request</span><span class="ansi-blue-fg">(self, prompt, ident, parent, password)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1216</span>             break
-<span class="ansi-green-intense-fg ansi-bold">   1217</span> except KeyboardInterrupt:
-<span class="ansi-green-intense-fg ansi-bold">   1218</span>     # re-raise KeyboardInterrupt, to truncate traceback
-<span class="ansi-green-fg">-&gt; 1219</span>     raise KeyboardInterrupt(&#34;Interrupted by user&#34;) from None
-<span class="ansi-green-intense-fg ansi-bold">   1220</span> except Exception:
-<span class="ansi-green-intense-fg ansi-bold">   1221</span>     self.log.warning(&#34;Invalid Message:&#34;, exc_info=True)
-
-<span class="ansi-red-fg">KeyboardInterrupt</span>: Interrupted by user</pre>
 </div>
 </div>
 

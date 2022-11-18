@@ -11,12 +11,16 @@ tags: [html, liquid, javascript]
 <!-- Hack 2: change to 24 bits and add a color code and display color when 24 bits, think about display on this one -->
 <!-- Hack 3: do your own thing -->
 
-{% assign BITS = 3 %}
+{% assign BITS = 8 %}
 
 <div class="container bg-primary">
     <header class="pb-3 mb-4 border-bottom border-primary text-dark">
         <span class="fs-4">Binary Math with Conversions</span>
     </header>
+    	<h1>Hack #2</h1>
+	<p>Color code: rgb(<span id="colorCode"></span>)</p>
+	<p>Hex: <span id="colorHex"></span></p>
+	<div id="colorBox"></div>
     <div class="row justify-content-md-center">
         <div class="col-8">
             <table class="table">
@@ -116,6 +120,7 @@ tags: [html, liquid, javascript]
         dig.value = 0;
         image.src = IMAGE_OFF;
         butt.innerHTML = MSG_ON;
+        print (decimal);
         } else {
         dig.value = 1;
         image.src = IMAGE_ON;

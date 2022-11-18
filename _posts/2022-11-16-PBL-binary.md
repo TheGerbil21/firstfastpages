@@ -103,10 +103,6 @@ tags: [html, liquid, javascript]
 
 	const [value, setValue] = reactive("", [setNumberHTML, setBits, setColor, updateFormats]);
 
-	const setBaseHTML = (b) => {
-			if (isBinError) return;
-			baseValue.innerHTML = b;
-
     // return string with current value of each bit
     function getBits() {
         let bits = "";

@@ -84,6 +84,28 @@ tags: [html, liquid, javascript]
 	const baseEl = document.getElementById("base");
 	const baseValue = document.getElementById("baseValue");
 	const baseN = document.getElementById("baseN");
+    
+    const setColor = (v) => {
+			if (v === "" || isBinError) return;
+			const val = Number.parseInt(v, 2);
+			colorBox.style.backgroundColor = `rgb(${val}, ${val}, ${val})`;
+		};
+
+	const updateFormats = (v) => {
+			if (v === "" || isBinError) return;
+			const val = Number.parseInt(v, 2);
+			decimal.innerHTML = val.toString(10);
+			hex.innerHTML = val.toString(16).padStart(2, "0");
+			octal.innerHTML = val.toString(8);
+			colorCode.innerHTML = `${val}, ${val}, ${val}`;
+			colorHex.innerHTML = `#${hex.innerHTML}${hex.innerHTML}${hex.innerHTML}`;
+		};
+
+	const [value, setValue] = reactive("", [setNumberHTML, setBits, setColor, updateFormats]);
+
+	const setBaseHTML = (b) => {
+			if (isBinError) return;
+			baseValue.innerHTML = b;
 
     // return string with current value of each bit
     function getBits() {

@@ -72,6 +72,18 @@ tags: [html, liquid, javascript]
     const IMAGE_ON = "{{site.baseurl}}/images/bulb_on.gif";
     const MSG_OFF = "Turn off";
     const IMAGE_OFF = "{{site.baseurl}}/images/bulb_off.png"
+    const number = document.getElementById("number");
+	const bitsContainer = document.getElementById("bits");
+	const colorBox = document.getElementById("colorBox");
+
+	const decimal = document.getElementById("decimal");
+	const hex = document.getElementById("hex");
+    const octal = document.getElementById("octal");
+	const colorHex = document.getElementById("colorHex");
+	const colorCode = document.getElementById("colorCode");
+	const baseEl = document.getElementById("base");
+	const baseValue = document.getElementById("baseValue");
+	const baseN = document.getElementById("baseN");
 
     // return string with current value of each bit
     function getBits() {

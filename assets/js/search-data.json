@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Mathematical Expressions and Strings Hacks - Jeffrey Lee",
-            "content": "Variables Hacks: . Num1 = 50 Num2 = Num1 % 9 + 15 Num3 = Num2 / Num1 + ( Num2 * 2 ) Num4 = Num3 + Num1 / 5 - 10 Result = Num4 - Num2 # Num1 = 50 # Num2 = 20 # Num3 = 40.4 # Num4 = 40.4 # Result = 40.4 - 20 = 20.4 . Num1 = 10 Num2 = Num1 % 3 * 4 Num1 = Num2 Num3 = Num1 * 3 Result = Num3 % 2 # Num1 = 4 # Num2 = 4 # Num3 = 12 # Result = 12 % 2 = 0 . valueA = 4 valueB = 90 valueC = 17 valueB = valueC - valueA valueA = valueA * 10 if valueB &gt; 10: print(valueC) # valueA = 40 # valueB = 13 # valueC = 17 # print(17) . 17 .",
+            "content": "Variables Hacks: . Num1 = 50 Num2 = Num1 % 9 + 15 Num3 = Num2 / Num1 + ( Num2 * 2 ) Num4 = Num3 + Num1 / 5 - 10 Result = Num4 - Num2 # Num1 = 50 # Num2 = 20 # Num3 = 40.4 # Num4 = 40.4 # Result = 40.4 - 20 = 20.4 . Num1 = 10 Num2 = Num1 % 3 * 4 Num1 = Num2 Num3 = Num1 * 3 Result = Num3 % 2 # Num1 = 4 # Num2 = 4 # Num3 = 12 # Result = 12 % 2 = 0 . valueA = 4 valueB = 90 valueC = 17 valueB = valueC - valueA valueA = valueA * 10 if valueB &gt; 10: print(valueC) # valueA = 40 # valueB = 13 # valueC = 17 # print(17) . 17 . type = &quot;curly&quot; color = &quot;brown&quot; length = &quot;short&quot; type = &quot;straight&quot; hair = type + color + length print(hair) # straightbrownshort . straightbrownshort .",
             "url": "https://thegerbil21.github.io/firstfastpages/jupyter/2022/11/29/3.3+3.4.html",
             "relUrl": "/jupyter/2022/11/29/3.3+3.4.html",
             "date": " • Nov 29, 2022"

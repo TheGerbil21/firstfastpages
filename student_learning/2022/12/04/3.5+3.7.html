@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      6 min read
+      7 min read
     
 </span></p>
 
@@ -857,6 +857,81 @@ Salary = 90000 dollars
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">quiz</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Who is the Teacher of APCSP Period 3?"</span><span class="p">:[</span><span class="s2">"a. Sean Yeung"</span><span class="p">,</span><span class="s2">"b. John Mortensen"</span><span class="p">,</span> <span class="s2">"c. Sunny Naidu"</span><span class="p">,</span> <span class="s2">"d. Brian Shultz"</span><span class="p">],</span> <span class="s2">"Which coin has the most value?"</span><span class="p">:[</span><span class="s2">"a. Quarter"</span><span class="p">,</span> <span class="s2">"b. Dime"</span><span class="p">,</span><span class="s2">"c. Nickel"</span><span class="p">,</span> <span class="s2">"d. Penny"</span><span class="p">]</span>
+<span class="p">,</span> <span class="s2">"What is the legal age to drink alcohol in the U.S.?"</span><span class="p">:[</span><span class="s2">"a. 18"</span><span class="p">,</span><span class="s2">"b. 19"</span><span class="p">,</span> <span class="s2">"c. 20"</span><span class="p">,</span> <span class="s2">"d. 21"</span><span class="p">],</span> <span class="s2">"What is 9 plus 10?"</span><span class="p">:[</span><span class="s2">"a. 21"</span><span class="p">,</span><span class="s2">"b. 76"</span><span class="p">,</span> <span class="s2">"c. 19"</span><span class="p">,</span> <span class="s2">"d. 32"</span><span class="p">]}</span>
+
+<span class="c1"># for the answers, used the question as the key and the multiple choice letter as the value </span>
+<span class="n">answers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Who is the Teacher of APCSP Period 3?"</span><span class="p">:</span><span class="s2">"b"</span><span class="p">,</span> <span class="s2">"Which coin has the most value?"</span><span class="p">:</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"What is the legal age to drink alcohol in the U.S.?"</span><span class="p">:</span><span class="s2">"d"</span><span class="p">,</span> <span class="s2">"What is 9 plus 10?"</span><span class="p">:</span><span class="s2">"c"</span><span class="p">}</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># iterating through the dictonary's keys and values </span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">quiz</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+<span class="c1"># printing the key and it's values </span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">v</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+
+<span class="c1"># taking the user input for the answer, entering ab</span>
+    <span class="n">user_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter Your Answer"</span><span class="p">)</span>
+
+<span class="c1"># comparing that with the answer's value </span>
+    <span class="k">if</span><span class="p">(</span><span class="n">answers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">==</span><span class="n">user_input</span><span class="p">):</span>
+
+        <span class="c1"># incrementing the count </span>
+     <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span><span class="mi">1</span>
+
+<span class="c1"># printing the user's score</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'You got'</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="s1">'correct answers'</span><span class="p">)</span>  
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Who is the Teacher of APCSP Period 3?
+a. Sean Yeung
+b. John Mortensen
+c. Sunny Naidu
+d. Brian Shultz
+Which coin has the most value?
+a. Quarter
+b. Dime
+c. Nickel
+d. Penny
+What is the legal age to drink alcohol in the U.S.?
+a. 18
+b. 19
+c. 20
+d. 21
+What is 9 plus 10?
+a. 21
+b. 76
+c. 19
+d. 32
+You got 4 correct answers
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 

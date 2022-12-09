@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: Jeffrey's example of using markdown with fastpages.
-categories: [markdown]
+categories: [misc]
 title: Jeffrey's First Markdown Post!
 ---
 # Hello APCSP

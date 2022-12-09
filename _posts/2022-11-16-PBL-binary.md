@@ -4,7 +4,7 @@ layout: default
 description: A Binary Math illustrative application using HTML, Liquid, and JavaScript.
 permalink: /frontend/binary
 categories: []
-tags: [html, liquid, javascript]
+tags: [java]
 ---
 
 <!-- Hack 1: add a character display to text when 8 bits, determine if printable or not printable -->

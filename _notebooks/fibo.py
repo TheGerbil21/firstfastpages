@@ -1,16 +1,5 @@
-# Fibonacci numbers module
+import numpy as np
+new_matrix = np.array([[1, 2, 3],[4, 5, 6],[7, 8, 9]]) 
 
-def fib(n):    # write Fibonacci series up to n
-    a, b = 0, 1
-    while a < n:
-        print(a, end=' ')
-        a, b = b, a+b
-    print()
+print (new_matrix)
 
-def fib2(n):   # return Fibonacci series up to n
-    result = []
-    a, b = 0, 1
-    while a < n:
-        result.append(a)
-        a, b = b, a+b
-    return result

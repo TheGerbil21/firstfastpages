@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      5 min read
     
 </span></p>
 
@@ -206,29 +206,20 @@ Steps of developing procedure: picking a useful name, thinking of parameters (wh
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">convertGrade</span><span class="p">(</span><span class="n">currentPoints</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">quizGrade</span> <span class="o">=</span> <span class="mi">35</span>
+<span class="k">def</span> <span class="nf">currentGrade</span><span class="p">(</span><span class="n">currentPoints</span><span class="p">):</span>    
     <span class="n">currentGrade</span> <span class="o">=</span> <span class="n">currentPoints</span> <span class="o">/</span> <span class="mi">40</span>
     <span class="n">currentGrade</span> <span class="o">=</span> <span class="n">currentGrade</span> <span class="o">*</span> <span class="mi">100</span>
     <span class="k">return</span> <span class="n">currentGrade</span>
 
+<span class="n">newPoints</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"How many points do you currently have?"</span><span class="p">))</span>
+<span class="n">newPercent</span> <span class="o">=</span> <span class="p">(</span><span class="n">currentGrade</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">newPoints</span><span class="p">)))</span>
 
-
-<span class="n">currentGrade</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"What is your current grade?"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Current Grade:"</span><span class="p">,</span> <span class="n">currentGrade</span><span class="p">)</span>
-
-<span class="n">quizGrade</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"What is your quiz grade?"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Quiz Grade:"</span><span class="p">,</span> <span class="n">quizGrade</span><span class="p">)</span>
-
-<span class="n">currentGrade</span> <span class="o">=</span> <span class="p">(</span><span class="n">convertGrade</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">currentGrade</span><span class="p">)))</span>
-
-<span class="k">if</span> <span class="n">quizGrade</span> <span class="o">&gt;</span> <span class="n">currentGrade</span><span class="p">:</span>
-    <span class="n">currentGrade</span> <span class="o">=</span> <span class="n">quizGrade</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Eligible for replacement!"</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">newPoints</span> <span class="o">&gt;</span> <span class="n">quizGrade</span><span class="p">):</span>
+    <span class="n">newquizGrade</span> <span class="o">=</span> <span class="n">newPercent</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Your new grade is: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">newquizGrade</span><span class="p">))</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">currentGrade</span> <span class="o">=</span> <span class="n">currentGrade</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Not eligible for replacement!"</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"New Grade: "</span><span class="p">,</span> <span class="n">currentGrade</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Your score is still "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">quizGrade</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -240,37 +231,9 @@ Steps of developing procedure: picking a useful name, thinking of parameters (wh
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">KeyboardInterrupt</span>                         Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">/home/jeffrey/vscode/firstfastpages/_notebooks/2022-12-07-developing-procedures.ipynb Cell 5</span> in <span class="ansi-cyan-fg">&lt;cell line: 3&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      &lt;a href='vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-12-07-developing-procedures.ipynb#W4sdnNjb2RlLXJlbW90ZQ%3D%3D?line=0'&gt;1&lt;/a&gt;</span> # for quiz of 40 points
-<span class="ansi-green-fg">----&gt; &lt;a href='vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-12-07-developing-procedures.ipynb#W4sdnNjb2RlLXJlbW90ZQ%3D%3D?line=2'&gt;3&lt;/a&gt;</span> currentGrade = input("What is your current grade?")
-<span class="ansi-green-intense-fg ansi-bold">      &lt;a href='vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-12-07-developing-procedures.ipynb#W4sdnNjb2RlLXJlbW90ZQ%3D%3D?line=3'&gt;4&lt;/a&gt;</span> print("Current Grade:", currentGrade)
-<span class="ansi-green-intense-fg ansi-bold">      &lt;a href='vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2022-12-07-developing-procedures.ipynb#W4sdnNjb2RlLXJlbW90ZQ%3D%3D?line=5'&gt;6&lt;/a&gt;</span> def convertGrade(currentPoints):
-
-File <span class="ansi-green-fg">~/.local/lib/python3.8/site-packages/ipykernel/kernelbase.py:1177</span>, in <span class="ansi-cyan-fg">Kernel.raw_input</span><span class="ansi-blue-fg">(self, prompt)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1173</span> if not self._allow_stdin:
-<span class="ansi-green-intense-fg ansi-bold">   1174</span>     raise StdinNotImplementedError(
-<span class="ansi-green-intense-fg ansi-bold">   1175</span>         "raw_input was called, but this frontend does not support input requests."
-<span class="ansi-green-intense-fg ansi-bold">   1176</span>     )
-<span class="ansi-green-fg">-&gt; 1177</span> return self._input_request(
-<span class="ansi-green-intense-fg ansi-bold">   1178</span>     str(prompt),
-<span class="ansi-green-intense-fg ansi-bold">   1179</span>     self._parent_ident["shell"],
-<span class="ansi-green-intense-fg ansi-bold">   1180</span>     self.get_parent("shell"),
-<span class="ansi-green-intense-fg ansi-bold">   1181</span>     password=False,
-<span class="ansi-green-intense-fg ansi-bold">   1182</span> )
-
-File <span class="ansi-green-fg">~/.local/lib/python3.8/site-packages/ipykernel/kernelbase.py:1219</span>, in <span class="ansi-cyan-fg">Kernel._input_request</span><span class="ansi-blue-fg">(self, prompt, ident, parent, password)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1216</span>             break
-<span class="ansi-green-intense-fg ansi-bold">   1217</span> except KeyboardInterrupt:
-<span class="ansi-green-intense-fg ansi-bold">   1218</span>     # re-raise KeyboardInterrupt, to truncate traceback
-<span class="ansi-green-fg">-&gt; 1219</span>     raise KeyboardInterrupt("Interrupted by user") from None
-<span class="ansi-green-intense-fg ansi-bold">   1220</span> except Exception:
-<span class="ansi-green-intense-fg ansi-bold">   1221</span>     self.log.warning("Invalid Message:", exc_info=True)
-
-<span class="ansi-red-fg">KeyboardInterrupt</span>: Interrupted by user</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Your score is still 35
+</pre>
 </div>
 </div>
 
@@ -361,14 +324,100 @@ MOVE_FORWARD()</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">procedure</span><span class="p">()</span>
-    <span class="c1"># code goes here</span>
-    <span class="k">return</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">infoDb</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="c1"># code goes here</span>
+<span class="n">infoDb</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+    <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"Jeffrey"</span><span class="p">,</span>
+    <span class="s2">"Birthday"</span><span class="p">:</span> <span class="s2">"December 27"</span><span class="p">,</span>
+<span class="p">})</span>
+
+<span class="n">infoDb</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+    <span class="s2">"Name"</span><span class="p">:</span> <span class="s2">"Avinh"</span><span class="p">,</span>
+    <span class="s2">"Birthday"</span><span class="p">:</span> <span class="s2">"December 27"</span><span class="p">,</span>
+<span class="p">})</span>
+
+<span class="k">def</span> <span class="nf">print_data2</span><span class="p">(</span><span class="n">d_rec</span><span class="p">):</span>                         <span class="c1"># formatting</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Name:"</span><span class="p">,</span> <span class="n">d_rec</span><span class="p">[</span><span class="s2">"Name"</span><span class="p">])</span>               <span class="c1"># using comma puts space between values</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"Birthday:"</span><span class="p">,</span> <span class="n">d_rec</span><span class="p">[</span><span class="s2">"Birthday"</span><span class="p">])</span> <span class="c1"># \t is a tab indent</span>
+    <span class="nb">print</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">data_entry</span><span class="p">():</span>                               <span class="c1"># defining the function that asks for user input</span>
+    <span class="n">Name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Which person would you like to add into the database?"</span><span class="p">)</span>
+    <span class="n">Birthday</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"What is the birthday of this person?"</span><span class="p">)</span>
+
+    <span class="n">infoDb</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>                             <span class="c1"># appends the user input to the dictionary</span>
+        <span class="s2">"Name"</span><span class="p">:</span> <span class="n">Name</span><span class="p">,</span>
+        <span class="s2">"Birthday"</span><span class="p">:</span> <span class="n">Birthday</span><span class="p">,</span>
+   
+    <span class="p">})</span>
+
+<span class="k">def</span> <span class="nf">search_data</span><span class="p">(</span><span class="n">Name</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">infoDb</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">record</span><span class="p">[</span><span class="s2">"Name"</span><span class="p">]</span> <span class="o">==</span> <span class="n">Name</span><span class="p">:</span>              <span class="c1"># compares the already existing name to the name inputted with the name variable</span>
+            <span class="k">return</span> <span class="n">record</span>
+
+    <span class="k">return</span> <span class="n">NULL</span>
+
+<span class="k">def</span> <span class="nf">data_delete</span><span class="p">(</span><span class="n">Name</span><span class="p">):</span>
+    <span class="n">record</span> <span class="o">=</span> <span class="n">search_data</span><span class="p">(</span><span class="n">Name</span><span class="p">)</span>                  <span class="c1"># defines record as the name inputted with the search function</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">record</span> <span class="o">!=</span> <span class="n">NULL</span><span class="p">):</span>                        <span class="c1"># if the record doesn't equal null (does it exist?) then the next line removes it</span>
+        <span class="n">infoDb</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">Name</span><span class="p">,</span> <span class="s2">"has been deleted!"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Record not found!"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">Continue</span> <span class="o">=</span> <span class="kc">True</span>                             <span class="c1"># defining continue as true</span>
+    <span class="k">while</span> <span class="n">Continue</span><span class="p">:</span>
+        <span class="n">gamer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"What would you like to do (add/search/delete, type no if you want to exit)?"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">gamer</span> <span class="o">==</span> <span class="s2">"no"</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Come back again!"</span><span class="p">)</span>
+            <span class="n">Continue</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">elif</span> <span class="n">gamer</span> <span class="o">==</span> <span class="s2">"add"</span><span class="p">:</span>
+            <span class="n">data_entry</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">gamer</span> <span class="o">==</span> <span class="s2">"search"</span><span class="p">:</span>
+            <span class="n">Name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"What name do you want to search?"</span><span class="p">)</span>
+            <span class="n">record</span> <span class="o">=</span> <span class="n">search_data</span><span class="p">(</span><span class="n">Name</span><span class="p">)</span>          <span class="c1"># defines record as the input "name" and runs it through the search function</span>
+            <span class="n">print_data2</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">gamer</span> <span class="o">==</span> <span class="s2">"delete"</span><span class="p">:</span>
+            <span class="n">Name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"What name do you want to delete?"</span><span class="p">)</span>
+            <span class="n">data_delete</span><span class="p">(</span><span class="n">Name</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Invalid input. Please try again"</span><span class="p">)</span>
+
+    <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">infoDb</span><span class="p">)</span>                        <span class="c1"># defines length as the number of records</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Total Number of Birthdays: "</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span> 
+    <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">infoDb</span><span class="p">:</span>
+            <span class="n">print_data2</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+ 
+<span class="n">main</span><span class="p">()</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Come back again!
+Total Number of Birthdays:  3
+Name: Jeffrey
+	 Birthday: December 27
+
+Name: Avinh
+	 Birthday: December 27
+
+Name: Joey
+	 Birthday: April 1
+
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 

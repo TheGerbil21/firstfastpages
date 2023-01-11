@@ -775,8 +775,8 @@ Test 4, make a dictionary
     <span class="n">u</span><span class="o">.</span><span class="n">uid</span> <span class="o">=</span> <span class="s2">"QD420_Wrizz"</span>
     <span class="n">u</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="s2">"123quandale"</span><span class="p">)</span>
     <span class="n">u</span><span class="o">.</span><span class="n">classOf</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"2025"</span><span class="p">)</span>
-    <span class="n">u</span><span class="o">.</span><span class="n">dob</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">1976</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">26</span><span class="p">)</span>
-    <span class="n">u</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span><span class="n">calculate_age</span><span class="p">(</span><span class="n">dob</span><span class="p">)</span> 
+    <span class="n">u</span><span class="o">.</span><span class="n">dob</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">26</span><span class="p">)</span>
+    <span class="n">u</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="p">(</span><span class="n">calculate_age</span><span class="p">(</span><span class="n">dob</span><span class="p">))</span> 
     <span class="n">u</span> <span class="o">=</span> <span class="n">tester</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">uid</span><span class="p">,</span> <span class="s2">"123quandale"</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">classOf</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">dob</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">age</span><span class="p">)</span>
 
     <span class="c1"># spacing</span>
@@ -811,18 +811,18 @@ Test 4, make a dictionary
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Test 1, find user 3
-name: "Jeffrey Lee", id: "jeff", psw: "sha256$sY0...", classOf: "2023", dob: "2004-12-27", age: "18"
-name: "Aiden Hyunh", id: "win", psw: "sha256$qP7...", classOf: "2024", dob: "2006-05-12", age: "16"
-* name: "Jagger Klein", id: "jagg", psw: "sha256$Sp4...", classOf: "2023", dob: "2004-09-18", age: "18"
-name: "Luke Angelini", id: "luke", psw: "sha256$rfP...", classOf: "2023", dob: "2004-07-29", age: "18"
-name: "James Armstrong", id: "jame", psw: "sha256$8mf...", classOf: "2024", dob: "2006-03-28", age: "16"
+name: "Jeffrey Lee", id: "jeff", psw: "sha256$AZW...", classOf: "2023", dob: "2004-12-27", age: "18"
+name: "Aiden Hyunh", id: "win", psw: "sha256$i2l...", classOf: "2024", dob: "2006-05-12", age: "16"
+* name: "Jagger Klein", id: "jagg", psw: "sha256$1aT...", classOf: "2023", dob: "2004-09-18", age: "18"
+name: "Luke Angelini", id: "luke", psw: "sha256$GfP...", classOf: "2023", dob: "2004-07-29", age: "18"
+name: "James Armstrong", id: "jame", psw: "sha256$RyR...", classOf: "2024", dob: "2006-03-28", age: "16"
  
 Test 2, change user 3
-name: "Jeffrey Lee", id: "jeff", psw: "sha256$sY0...", classOf: "2023", dob: "2004-12-27", age: "18"
-name: "Aiden Hyunh", id: "win", psw: "sha256$qP7...", classOf: "2024", dob: "2006-05-12", age: "16"
-* name: "Quandale Dingle", id: "QD420_Wrizz", psw: "sha256$eCO...", classOf: "2025", dob: "1976-01-26", age: "18"
-name: "Luke Angelini", id: "luke", psw: "sha256$rfP...", classOf: "2023", dob: "2004-07-29", age: "18"
-name: "James Armstrong", id: "jame", psw: "sha256$8mf...", classOf: "2024", dob: "2006-03-28", age: "16"
+name: "Jeffrey Lee", id: "jeff", psw: "sha256$AZW...", classOf: "2023", dob: "2004-12-27", age: "18"
+name: "Aiden Hyunh", id: "win", psw: "sha256$i2l...", classOf: "2024", dob: "2006-05-12", age: "16"
+* name: "Quandale Dingle", id: "QD420_Wrizz", psw: "sha256$pPu...", classOf: "2025", dob: "2000-01-26", age: "18"
+name: "Luke Angelini", id: "luke", psw: "sha256$GfP...", classOf: "2023", dob: "2004-07-29", age: "18"
+name: "James Armstrong", id: "jame", psw: "sha256$RyR...", classOf: "2024", dob: "2006-03-28", age: "16"
  
 Test 3, make a dictionary
 </pre>

@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      10 min read
+      16 min read
     
 </span></p>
 
@@ -445,6 +445,7 @@ Test 4, make a dictionary
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># A gateway in necessary as a web server cannot communicate directly with Python.</span>
 <span class="c1"># In this case, imports are focused on generating hash code to protect passwords.</span>
 <span class="kn">from</span> <span class="nn">werkzeug.security</span> <span class="kn">import</span> <span class="n">generate_password_hash</span><span class="p">,</span> <span class="n">check_password_hash</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
 <span class="kn">import</span> <span class="nn">json</span>
 
 <span class="c1"># Define a User Class/Template</span>
@@ -543,7 +544,7 @@ Test 4, make a dictionary
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
 
     <span class="c1"># define user objects</span>
-    <span class="n">u1</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Jeffrey Lee'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'jeff'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123jeff'</span><span class="p">,</span> <span class="n">classOf</span><span class="o">=</span><span class="s1">'2023'</span><span class="p">,</span> <span class="n">dob</span><span class="o">=</span><span class="s1">'12.27.04'</span><span class="p">)</span>
+    <span class="n">u1</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Jeffrey Lee'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'jeff'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123jeff'</span><span class="p">,</span> <span class="n">classOf</span><span class="o">=</span><span class="s1">'2023'</span><span class="p">,</span> <span class="n">dob</span> <span class="o">=</span><span class="s1">'12.27.04'</span><span class="p">)</span>
     <span class="n">u2</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Aiden Hyunh'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'win'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123win'</span><span class="p">,</span> <span class="n">classOf</span><span class="o">=</span><span class="s1">'2024'</span><span class="p">,</span> <span class="n">dob</span><span class="o">=</span><span class="s1">'5.12.06'</span><span class="p">)</span>
     <span class="n">u3</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Jagger Klein'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'jagg'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123jagg'</span><span class="p">,</span> <span class="n">classOf</span><span class="o">=</span><span class="s1">'2023'</span><span class="p">,</span> <span class="n">dob</span><span class="o">=</span><span class="s1">'9.18.04'</span><span class="p">)</span>
     <span class="n">u4</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Luke Angelini'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'luke'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123luke'</span><span class="p">,</span> <span class="n">classOf</span><span class="o">=</span><span class="s1">'2023'</span><span class="p">,</span> <span class="n">dob</span><span class="o">=</span><span class="s1">'7.29.04'</span><span class="p">)</span>
@@ -599,25 +600,291 @@ Test 4, make a dictionary
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Test 1, find user 3
-name: "Jeffrey Lee", id: "jeff", psw: "sha256$E2T...", classOf: "2023", dob: "12.27.04"
-name: "Aiden Hyunh", id: "win", psw: "sha256$K2S...", classOf: "2024", dob: "5.12.06"
-* name: "Jagger Klein", id: "jagg", psw: "sha256$Ndf...", classOf: "2023", dob: "9.18.04"
-name: "Luke Angelini", id: "luke", psw: "sha256$iRS...", classOf: "2023", dob: "7.29.04"
-name: "James Armstrong", id: "jame", psw: "sha256$6Qk...", classOf: "2024", dob: "3.28.06"
+name: "Jeffrey Lee", id: "jeff", psw: "sha256$BZW...", classOf: "2023", dob: "12.27.04"
+name: "Aiden Hyunh", id: "win", psw: "sha256$QqS...", classOf: "2024", dob: "5.12.06"
+* name: "Jagger Klein", id: "jagg", psw: "sha256$FK3...", classOf: "2023", dob: "9.18.04"
+name: "Luke Angelini", id: "luke", psw: "sha256$pYe...", classOf: "2023", dob: "7.29.04"
+name: "James Armstrong", id: "jame", psw: "sha256$FAQ...", classOf: "2024", dob: "3.28.06"
  
 Test 2, change user 3
-name: "Jeffrey Lee", id: "jeff", psw: "sha256$E2T...", classOf: "2023", dob: "12.27.04"
-name: "Aiden Hyunh", id: "win", psw: "sha256$K2S...", classOf: "2024", dob: "5.12.06"
-* name: "Quandale Dingle", id: "QD420_Wrizz", psw: "sha256$T8J...", classOf: "2025", dob: "1.26.54"
-name: "Luke Angelini", id: "luke", psw: "sha256$iRS...", classOf: "2023", dob: "7.29.04"
-name: "James Armstrong", id: "jame", psw: "sha256$6Qk...", classOf: "2024", dob: "3.28.06"
+name: "Jeffrey Lee", id: "jeff", psw: "sha256$BZW...", classOf: "2023", dob: "12.27.04"
+name: "Aiden Hyunh", id: "win", psw: "sha256$QqS...", classOf: "2024", dob: "5.12.06"
+* name: "Quandale Dingle", id: "QD420_Wrizz", psw: "sha256$pi0...", classOf: "2025", dob: "1.26.54"
+name: "Luke Angelini", id: "luke", psw: "sha256$pYe...", classOf: "2023", dob: "7.29.04"
+name: "James Armstrong", id: "jame", psw: "sha256$FAQ...", classOf: "2024", dob: "3.28.06"
  
 Test 3, make a dictionary
-[{"_name": "Jeffrey Lee", "_uid": "jeff", "_password": "sha256$E2TbULl6KyL5exaS$ae1c4f5c47a61e99153d2eef31ae7de4e93dcf377b36d367260d49078afa9ae1", "_classOf": "2023", "_dob": "12.27.04"}, {"_name": "Aiden Hyunh", "_uid": "win", "_password": "sha256$K2Sp9Hf2rcUdO0G9$7ebdea002c69e60dd3ee866773753d59edae369abe6806ae1ad100804de59416", "_classOf": "2024", "_dob": "5.12.06"}, {"_name": "Quandale Dingle", "_uid": "QD420_Wrizz", "_password": "sha256$T8JTc5K1CqaBPqx2$683b144ee014120bff16d71284437191dd7e31bc279b1a2e9a942ba43b9cbcde", "_classOf": "2025", "_dob": "1.26.54"}, {"_name": "Luke Angelini", "_uid": "luke", "_password": "sha256$iRS4y53ZRQTd2rX4$29b654b7aa6360292128f6ac984cebc5672b1e0f058c36b8eb9f8773eb674e1e", "_classOf": "2023", "_dob": "7.29.04"}, {"_name": "James Armstrong", "_uid": "jame", "_password": "sha256$6QkPEL7wBlKDNcUP$74d5a973f9bc4e3178e02e0b7ff46bd1256616922cf3ec053e14960db3e1560f", "_classOf": "2024", "_dob": "3.28.06"}]
+[{"_name": "Jeffrey Lee", "_uid": "jeff", "_password": "sha256$BZW6uj8OBmWPmsYn$dbd74ce118c6677fdb6faeede33b66269b324737c1866a3791e4eb7f33ca43d6", "_classOf": "2023", "_dob": "12.27.04"}, {"_name": "Aiden Hyunh", "_uid": "win", "_password": "sha256$QqSB5Jh0Df3PVkja$3525643758936f782617d5b684df7379857995a8d83e4a781d907fa9fd2d0785", "_classOf": "2024", "_dob": "5.12.06"}, {"_name": "Quandale Dingle", "_uid": "QD420_Wrizz", "_password": "sha256$pi0DgfP2ADn4aVex$d404b0f5584d624e129650a2bcf9d3f128ab4d1ebd24245ecca39e91089d8693", "_classOf": "2025", "_dob": "1.26.54"}, {"_name": "Luke Angelini", "_uid": "luke", "_password": "sha256$pYeV2jXuCsKj7AU1$302e96d1a3971583e805b670e096ff7126fc96ca3c5f97f24324588b75f8f4b3", "_classOf": "2023", "_dob": "7.29.04"}, {"_name": "James Armstrong", "_uid": "jame", "_password": "sha256$FAQIkB2CNkLnCItv$1204c9b6d6e8d4e09d20f1db5164be059529aa2e7126315c99b00ee5c831e704", "_classOf": "2024", "_dob": "3.28.06"}]
  
 Test 4, make a dictionary
-[{"_name": "Jeffrey Lee", "_uid": "jeff", "_password": "sha256$E2TbULl6KyL5exaS$ae1c4f5c47a61e99153d2eef31ae7de4e93dcf377b36d367260d49078afa9ae1", "_classOf": "2023", "_dob": "12.27.04"}, {"_name": "Aiden Hyunh", "_uid": "win", "_password": "sha256$K2Sp9Hf2rcUdO0G9$7ebdea002c69e60dd3ee866773753d59edae369abe6806ae1ad100804de59416", "_classOf": "2024", "_dob": "5.12.06"}, {"_name": "Quandale Dingle", "_uid": "QD420_Wrizz", "_password": "sha256$T8JTc5K1CqaBPqx2$683b144ee014120bff16d71284437191dd7e31bc279b1a2e9a942ba43b9cbcde", "_classOf": "2025", "_dob": "1.26.54"}, {"_name": "Luke Angelini", "_uid": "luke", "_password": "sha256$iRS4y53ZRQTd2rX4$29b654b7aa6360292128f6ac984cebc5672b1e0f058c36b8eb9f8773eb674e1e", "_classOf": "2023", "_dob": "7.29.04"}, {"_name": "James Armstrong", "_uid": "jame", "_password": "sha256$6QkPEL7wBlKDNcUP$74d5a973f9bc4e3178e02e0b7ff46bd1256616922cf3ec053e14960db3e1560f", "_classOf": "2024", "_dob": "3.28.06"}]
+[{"_name": "Jeffrey Lee", "_uid": "jeff", "_password": "sha256$BZW6uj8OBmWPmsYn$dbd74ce118c6677fdb6faeede33b66269b324737c1866a3791e4eb7f33ca43d6", "_classOf": "2023", "_dob": "12.27.04"}, {"_name": "Aiden Hyunh", "_uid": "win", "_password": "sha256$QqSB5Jh0Df3PVkja$3525643758936f782617d5b684df7379857995a8d83e4a781d907fa9fd2d0785", "_classOf": "2024", "_dob": "5.12.06"}, {"_name": "Quandale Dingle", "_uid": "QD420_Wrizz", "_password": "sha256$pi0DgfP2ADn4aVex$d404b0f5584d624e129650a2bcf9d3f128ab4d1ebd24245ecca39e91089d8693", "_classOf": "2025", "_dob": "1.26.54"}, {"_name": "Luke Angelini", "_uid": "luke", "_password": "sha256$pYeV2jXuCsKj7AU1$302e96d1a3971583e805b670e096ff7126fc96ca3c5f97f24324588b75f8f4b3", "_classOf": "2023", "_dob": "7.29.04"}, {"_name": "James Armstrong", "_uid": "jame", "_password": "sha256$FAQIkB2CNkLnCItv$1204c9b6d6e8d4e09d20f1db5164be059529aa2e7126315c99b00ee5c831e704", "_classOf": "2024", "_dob": "3.28.06"}]
 </pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># A gateway in necessary as a web server cannot communicate directly with Python.</span>
+<span class="c1"># In this case, imports are focused on generating hash code to protect passwords.</span>
+<span class="kn">from</span> <span class="nn">werkzeug.security</span> <span class="kn">import</span> <span class="n">generate_password_hash</span><span class="p">,</span> <span class="n">check_password_hash</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="c1"># Define a User Class/Template</span>
+<span class="c1"># -- A User represents the data we want to manage</span>
+<span class="k">class</span> <span class="nc">User</span><span class="p">:</span>    
+    <span class="c1"># constructor of a User object, initializes the instance variables within object (self)</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">classOf</span><span class="p">,</span> <span class="n">dob</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>    <span class="c1"># variables with self prefix become part of the object, </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_uid</span> <span class="o">=</span> <span class="n">uid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="n">password</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_classOf</span> <span class="o">=</span> <span class="n">classOf</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dob</span> <span class="o">=</span> <span class="n">dob</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_age</span> <span class="o">=</span> <span class="n">age</span> <span class="o">=</span> <span class="n">calculate_age</span><span class="p">(</span><span class="n">dob</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">calculate_age</span><span class="p">(</span><span class="n">born</span><span class="p">):</span>
+        <span class="n">today</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">today</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="n">born</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="p">((</span><span class="n">today</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">today</span><span class="o">.</span><span class="n">day</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">born</span><span class="o">.</span><span class="n">month</span><span class="p">,</span> <span class="n">born</span><span class="o">.</span><span class="n">day</span><span class="p">))</span>
+
+
+    <span class="c1"># a name getter method, extracts name from object</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+    
+    <span class="c1"># a setter function, allows name to be updated after initial object creation</span>
+    <span class="nd">@name</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
+    
+    <span class="c1"># a getter method, extracts email from object</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">uid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_uid</span>
+    
+    <span class="c1"># a setter function, allows name to be updated after initial object creation</span>
+    <span class="nd">@uid</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">uid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uid</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_uid</span> <span class="o">=</span> <span class="n">uid</span>
+        
+    <span class="c1"># check if uid parameter matches user id in object, return boolean</span>
+    <span class="k">def</span> <span class="nf">is_uid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uid</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_uid</span> <span class="o">==</span> <span class="n">uid</span>
+    
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">password</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_password</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"..."</span> <span class="c1"># because of security only show 1st characters</span>
+
+    <span class="c1"># update password, this is conventional setter</span>
+    <span class="k">def</span> <span class="nf">set_password</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+        <span class="sd">"""Create a hashed password."""</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_password</span> <span class="o">=</span> <span class="n">generate_password_hash</span><span class="p">(</span><span class="n">password</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'sha256'</span><span class="p">)</span>
+
+    <span class="c1"># check password parameter versus stored/encrypted password</span>
+    <span class="k">def</span> <span class="nf">is_password</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+        <span class="sd">"""Check against hashed password."""</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">check_password_hash</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_password</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span>
+    
+        <span class="c1"># a classOf getter method, extracts classOf from object</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">classOf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_classOf</span>
+    
+    <span class="c1"># a setter function, allows classOf to be updated after initial object creation</span>
+    <span class="nd">@classOf</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">classOf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">classOf</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_classOf</span> <span class="o">=</span> <span class="n">classOf</span>
+
+        <span class="c1"># a dob getter method, extracts dob from object</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">dob</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dob</span>
+    
+    <span class="c1"># a setter function, allows dob to be updated after initial object creation</span>
+    <span class="nd">@dob</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">dob</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dob</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dob</span> <span class="o">=</span> <span class="n">dob</span>
+
+            <span class="c1"># a classOf getter method, extracts age from object</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_age</span>
+    
+    <span class="c1"># a setter function, allows age to be updated after initial object creation</span>
+    <span class="nd">@age</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">age</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_age</span> <span class="o">=</span> <span class="n">age</span>
+
+
+    <span class="c1"># output content using str(object) in human readable form, uses getter</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">'name: "</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">", id: "</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">uid</span><span class="si">}</span><span class="s1">", psw: "</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">password</span><span class="si">}</span><span class="s1">", classOf: "</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">classOf</span><span class="si">}</span><span class="s1">", dob: "</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">dob</span><span class="si">}</span><span class="s1">", age: "</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="si">}</span><span class="s1">"'</span>
+
+    <span class="c1"># output command to recreate the object, uses attribute directly</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">'Person(name=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_name</span><span class="si">}</span><span class="s1">, uid=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_uid</span><span class="si">}</span><span class="s1">, password=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_password</span><span class="si">}</span><span class="s1">, classOf=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_classOf</span><span class="si">}</span><span class="s1">, dob=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_dob</span><span class="si">}</span><span class="s1">, age=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_age</span><span class="si">}</span><span class="s1">)'</span>
+
+
+<span class="c1"># tester method to print users</span>
+<span class="k">def</span> <span class="nf">tester</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">psw</span><span class="p">,</span> <span class="n">classOf</span><span class="p">,</span> <span class="n">dob</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">:</span>
+        <span class="c1"># test for match in database</span>
+        <span class="k">if</span> <span class="n">user</span><span class="o">.</span><span class="n">uid</span> <span class="o">==</span> <span class="n">uid</span> <span class="ow">and</span> <span class="n">user</span><span class="o">.</span><span class="n">is_password</span><span class="p">(</span><span class="n">psw</span><span class="p">):</span>  <span class="c1"># check for match</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"* "</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">user</span>
+        <span class="c1"># print using __str__ method</span>
+        <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">user</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">result</span>
+        
+
+<span class="c1"># place tester code inside of special if!  This allows include without tester running</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+
+    <span class="c1"># define user objects</span>
+    <span class="n">u1</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Jeffrey Lee'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'jeff'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123jeff'</span><span class="p">,</span> <span class="n">classOf</span><span class="o">=</span><span class="s1">'2023'</span><span class="p">,</span> <span class="n">dob</span> <span class="o">=</span><span class="n">date</span><span class="p">(</span><span class="mi">2004</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">27</span><span class="p">),</span> <span class="n">age</span> <span class="o">=</span><span class="n">calculate_age</span><span class="p">(</span><span class="n">dob</span><span class="p">))</span>
+    <span class="n">u2</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Aiden Hyunh'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'win'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123win'</span><span class="p">,</span> <span class="n">classOf</span><span class="o">=</span><span class="s1">'2024'</span><span class="p">,</span> <span class="n">dob</span> <span class="o">=</span><span class="n">date</span><span class="p">(</span><span class="mi">2006</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="n">age</span> <span class="o">=</span><span class="n">calculate_age</span><span class="p">(</span><span class="n">dob</span><span class="p">))</span>
+    <span class="n">u3</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Jagger Klein'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'jagg'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123jagg'</span><span class="p">,</span> <span class="n">classOf</span><span class="o">=</span><span class="s1">'2023'</span><span class="p">,</span> <span class="n">dob</span> <span class="o">=</span><span class="n">date</span><span class="p">(</span><span class="mi">2004</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">18</span><span class="p">),</span> <span class="n">age</span> <span class="o">=</span><span class="n">calculate_age</span><span class="p">(</span><span class="n">dob</span><span class="p">))</span>
+    <span class="n">u4</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'Luke Angelini'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'luke'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123luke'</span><span class="p">,</span> <span class="n">classOf</span><span class="o">=</span><span class="s1">'2023'</span><span class="p">,</span> <span class="n">dob</span> <span class="o">=</span><span class="n">date</span><span class="p">(</span><span class="mi">2004</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">29</span><span class="p">),</span> <span class="n">age</span> <span class="o">=</span><span class="n">calculate_age</span><span class="p">(</span><span class="n">dob</span><span class="p">))</span>
+    <span class="n">u5</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">'James Armstrong'</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s1">'jame'</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">'123jame'</span><span class="p">,</span> <span class="n">classOf</span><span class="o">=</span><span class="s1">'2024'</span><span class="p">,</span> <span class="n">dob</span> <span class="o">=</span><span class="n">date</span><span class="p">(</span><span class="mi">2006</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">28</span><span class="p">),</span> <span class="n">age</span> <span class="o">=</span><span class="n">calculate_age</span><span class="p">(</span><span class="n">dob</span><span class="p">))</span>
+
+    <span class="c1"># put user objects in list for convenience</span>
+    <span class="n">users</span> <span class="o">=</span> <span class="p">[</span><span class="n">u1</span><span class="p">,</span> <span class="n">u2</span><span class="p">,</span> <span class="n">u3</span><span class="p">,</span> <span class="n">u4</span><span class="p">,</span> <span class="n">u5</span><span class="p">]</span>
+
+    <span class="c1"># Find user</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Test 1, find user 3"</span><span class="p">)</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">tester</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="n">u3</span><span class="o">.</span><span class="n">uid</span><span class="p">,</span> <span class="s2">"123jagg"</span><span class="p">,</span> <span class="n">u3</span><span class="o">.</span><span class="n">classOf</span><span class="p">,</span> <span class="n">u3</span><span class="o">.</span><span class="n">dob</span><span class="p">,</span> <span class="n">u3</span><span class="o">.</span><span class="n">age</span><span class="p">)</span>
+
+    <span class="c1"># spacing</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">" "</span><span class="p">)</span>
+    <span class="c1"># Change user</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Test 2, change user 3"</span><span class="p">)</span>
+    <span class="n">u</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"Quandale Dingle"</span>
+    <span class="n">u</span><span class="o">.</span><span class="n">uid</span> <span class="o">=</span> <span class="s2">"QD420_Wrizz"</span>
+    <span class="n">u</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="s2">"123quandale"</span><span class="p">)</span>
+    <span class="n">u</span><span class="o">.</span><span class="n">classOf</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"2025"</span><span class="p">)</span>
+    <span class="n">u</span><span class="o">.</span><span class="n">dob</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">1976</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">26</span><span class="p">)</span>
+    <span class="n">u</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span><span class="n">calculate_age</span><span class="p">(</span><span class="n">dob</span><span class="p">)</span> 
+    <span class="n">u</span> <span class="o">=</span> <span class="n">tester</span><span class="p">(</span><span class="n">users</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">uid</span><span class="p">,</span> <span class="s2">"123quandale"</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">classOf</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">dob</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">age</span><span class="p">)</span>
+
+    <span class="c1"># spacing</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">" "</span><span class="p">)</span>
+
+    <span class="c1"># Make dictionary</span>
+    <span class="sd">''' </span>
+<span class="sd">    The __dict__ in Python represents a dictionary or any mapping object that is used to store the attributes of the object. </span>
+<span class="sd">    Every object in Python has an attribute that is denoted by __dict__. </span>
+<span class="sd">    Use the json.dumps() method to convert the list of Users to a JSON string.</span>
+<span class="sd">    '''</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Test 3, make a dictionary"</span><span class="p">)</span>
+    <span class="n">json_string</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">([</span><span class="n">user</span><span class="o">.</span><span class="vm">__dict__</span> <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">])</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">json_string</span><span class="p">)</span>
+
+    <span class="c1"># spacing</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">" "</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Test 4, make a dictionary"</span><span class="p">)</span>
+    <span class="n">json_string</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">([</span><span class="nb">vars</span><span class="p">(</span><span class="n">user</span><span class="p">)</span> <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">])</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">json_string</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Test 1, find user 3
+name: "Jeffrey Lee", id: "jeff", psw: "sha256$sY0...", classOf: "2023", dob: "2004-12-27", age: "18"
+name: "Aiden Hyunh", id: "win", psw: "sha256$qP7...", classOf: "2024", dob: "2006-05-12", age: "16"
+* name: "Jagger Klein", id: "jagg", psw: "sha256$Sp4...", classOf: "2023", dob: "2004-09-18", age: "18"
+name: "Luke Angelini", id: "luke", psw: "sha256$rfP...", classOf: "2023", dob: "2004-07-29", age: "18"
+name: "James Armstrong", id: "jame", psw: "sha256$8mf...", classOf: "2024", dob: "2006-03-28", age: "16"
+ 
+Test 2, change user 3
+name: "Jeffrey Lee", id: "jeff", psw: "sha256$sY0...", classOf: "2023", dob: "2004-12-27", age: "18"
+name: "Aiden Hyunh", id: "win", psw: "sha256$qP7...", classOf: "2024", dob: "2006-05-12", age: "16"
+* name: "Quandale Dingle", id: "QD420_Wrizz", psw: "sha256$eCO...", classOf: "2025", dob: "1976-01-26", age: "18"
+name: "Luke Angelini", id: "luke", psw: "sha256$rfP...", classOf: "2023", dob: "2004-07-29", age: "18"
+name: "James Armstrong", id: "jame", psw: "sha256$8mf...", classOf: "2024", dob: "2006-03-28", age: "16"
+ 
+Test 3, make a dictionary
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">/home/jeffrey/vscode/firstfastpages/_notebooks/2023-01-10-model-oop.ipynb Cell 9</span> in <span class="ansi-cyan-fg">&lt;cell line: 118&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">    &lt;a href='vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2023-01-10-model-oop.ipynb#X12sdnNjb2RlLXJlbW90ZQ%3D%3D?line=149'&gt;150&lt;/a&gt;</span> ''' 
+<span class="ansi-green-intense-fg ansi-bold">    &lt;a href='vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2023-01-10-model-oop.ipynb#X12sdnNjb2RlLXJlbW90ZQ%3D%3D?line=150'&gt;151&lt;/a&gt;</span> The __dict__ in Python represents a dictionary or any mapping object that is used to store the attributes of the object. 
+<span class="ansi-green-intense-fg ansi-bold">    &lt;a href='vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2023-01-10-model-oop.ipynb#X12sdnNjb2RlLXJlbW90ZQ%3D%3D?line=151'&gt;152&lt;/a&gt;</span> Every object in Python has an attribute that is denoted by __dict__. 
+<span class="ansi-green-intense-fg ansi-bold">    &lt;a href='vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2023-01-10-model-oop.ipynb#X12sdnNjb2RlLXJlbW90ZQ%3D%3D?line=152'&gt;153&lt;/a&gt;</span> Use the json.dumps() method to convert the list of Users to a JSON string.
+<span class="ansi-green-intense-fg ansi-bold">    &lt;a href='vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2023-01-10-model-oop.ipynb#X12sdnNjb2RlLXJlbW90ZQ%3D%3D?line=153'&gt;154&lt;/a&gt;</span> '''
+<span class="ansi-green-intense-fg ansi-bold">    &lt;a href='vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2023-01-10-model-oop.ipynb#X12sdnNjb2RlLXJlbW90ZQ%3D%3D?line=154'&gt;155&lt;/a&gt;</span> print("Test 3, make a dictionary")
+<span class="ansi-green-fg">--&gt; &lt;a href='vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2023-01-10-model-oop.ipynb#X12sdnNjb2RlLXJlbW90ZQ%3D%3D?line=155'&gt;156&lt;/a&gt;</span> json_string = json.dumps([user.__dict__ for user in users]) 
+<span class="ansi-green-intense-fg ansi-bold">    &lt;a href='vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2023-01-10-model-oop.ipynb#X12sdnNjb2RlLXJlbW90ZQ%3D%3D?line=156'&gt;157&lt;/a&gt;</span> print(json_string)
+<span class="ansi-green-intense-fg ansi-bold">    &lt;a href='vscode-notebook-cell://wsl%2Bubuntu/home/jeffrey/vscode/firstfastpages/_notebooks/2023-01-10-model-oop.ipynb#X12sdnNjb2RlLXJlbW90ZQ%3D%3D?line=158'&gt;159&lt;/a&gt;</span> # spacing
+
+File <span class="ansi-green-fg">~/anaconda3/lib/python3.9/json/__init__.py:231</span>, in <span class="ansi-cyan-fg">dumps</span><span class="ansi-blue-fg">(obj, skipkeys, ensure_ascii, check_circular, allow_nan, cls, indent, separators, default, sort_keys, **kw)</span>
+<span class="ansi-green-intense-fg ansi-bold">    226</span> # cached encoder
+<span class="ansi-green-intense-fg ansi-bold">    227</span> if (not skipkeys and ensure_ascii and
+<span class="ansi-green-intense-fg ansi-bold">    228</span>     check_circular and allow_nan and
+<span class="ansi-green-intense-fg ansi-bold">    229</span>     cls is None and indent is None and separators is None and
+<span class="ansi-green-intense-fg ansi-bold">    230</span>     default is None and not sort_keys and not kw):
+<span class="ansi-green-fg">--&gt; 231</span>     return _default_encoder.encode(obj)
+<span class="ansi-green-intense-fg ansi-bold">    232</span> if cls is None:
+<span class="ansi-green-intense-fg ansi-bold">    233</span>     cls = JSONEncoder
+
+File <span class="ansi-green-fg">~/anaconda3/lib/python3.9/json/encoder.py:199</span>, in <span class="ansi-cyan-fg">JSONEncoder.encode</span><span class="ansi-blue-fg">(self, o)</span>
+<span class="ansi-green-intense-fg ansi-bold">    195</span>         return encode_basestring(o)
+<span class="ansi-green-intense-fg ansi-bold">    196</span> # This doesn't pass the iterator directly to ''.join() because the
+<span class="ansi-green-intense-fg ansi-bold">    197</span> # exceptions aren't as detailed.  The list call should be roughly
+<span class="ansi-green-intense-fg ansi-bold">    198</span> # equivalent to the PySequence_Fast that ''.join() would do.
+<span class="ansi-green-fg">--&gt; 199</span> chunks = self.iterencode(o, _one_shot=True)
+<span class="ansi-green-intense-fg ansi-bold">    200</span> if not isinstance(chunks, (list, tuple)):
+<span class="ansi-green-intense-fg ansi-bold">    201</span>     chunks = list(chunks)
+
+File <span class="ansi-green-fg">~/anaconda3/lib/python3.9/json/encoder.py:257</span>, in <span class="ansi-cyan-fg">JSONEncoder.iterencode</span><span class="ansi-blue-fg">(self, o, _one_shot)</span>
+<span class="ansi-green-intense-fg ansi-bold">    252</span> else:
+<span class="ansi-green-intense-fg ansi-bold">    253</span>     _iterencode = _make_iterencode(
+<span class="ansi-green-intense-fg ansi-bold">    254</span>         markers, self.default, _encoder, self.indent, floatstr,
+<span class="ansi-green-intense-fg ansi-bold">    255</span>         self.key_separator, self.item_separator, self.sort_keys,
+<span class="ansi-green-intense-fg ansi-bold">    256</span>         self.skipkeys, _one_shot)
+<span class="ansi-green-fg">--&gt; 257</span> return _iterencode(o, 0)
+
+File <span class="ansi-green-fg">~/anaconda3/lib/python3.9/json/encoder.py:179</span>, in <span class="ansi-cyan-fg">JSONEncoder.default</span><span class="ansi-blue-fg">(self, o)</span>
+<span class="ansi-green-intense-fg ansi-bold">    160</span> def default(self, o):
+<span class="ansi-green-intense-fg ansi-bold">    161</span>     """Implement this method in a subclass such that it returns
+<span class="ansi-green-intense-fg ansi-bold">    162</span>     a serializable object for ``o``, or calls the base implementation
+<span class="ansi-green-intense-fg ansi-bold">    163</span>     (to raise a ``TypeError``).
+<span class="ansi-green-fg">   (...)</span>
+<span class="ansi-green-intense-fg ansi-bold">    177</span> 
+<span class="ansi-green-intense-fg ansi-bold">    178</span>     """
+<span class="ansi-green-fg">--&gt; 179</span>     raise TypeError(f'Object of type {o.__class__.__name__} '
+<span class="ansi-green-intense-fg ansi-bold">    180</span>                     f'is not JSON serializable')
+
+<span class="ansi-red-fg">TypeError</span>: Object of type date is not JSON serializable</pre>
 </div>
 </div>
 

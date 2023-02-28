@@ -12,7 +12,7 @@ My video demonstration of my feature can be found [here](https://www.loom.com/sh
 
 # Write-Up (Inventory Management System)
 
-## 3a. 
+## 3a.  
 
 ### 3.a.i.
 

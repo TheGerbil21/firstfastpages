@@ -97,7 +97,7 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h1"><a href="#video">Video</a></li>
-<li class="toc-entry toc-h1"><a href="#write-up-inventory-management-system">Write-Up (Inventory Management System)</a>
+<li class="toc-entry toc-h1"><a href="#write-up-location-tracker-system">Write-Up (Location Tracker System)</a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#3a">3a.</a>
 <ul>
@@ -150,10 +150,10 @@ window.onload = wrap_img;
 </ul><h1 id="video">
 <a class="anchor" href="#video" aria-hidden="true"><span class="octicon octicon-link"></span></a>Video</h1>
 
-<p>My video demonstration of my feature can be found <a href="https://www.loom.com/share/cb190d6af69549c3ac35da28ea8179b6">here</a>.</p>
+<p>My video demonstration of my feature can be found <a href="https://www.youtube.com/watch?v=g4fpVEaYKEI">here</a>.</p>
 
-<h1 id="write-up-inventory-management-system">
-<a class="anchor" href="#write-up-inventory-management-system" aria-hidden="true"><span class="octicon octicon-link"></span></a>Write-Up (Inventory Management System)</h1>
+<h1 id="write-up-location-tracker-system">
+<a class="anchor" href="#write-up-location-tracker-system" aria-hidden="true"><span class="octicon octicon-link"></span></a>Write-Up (Location Tracker System)</h1>
 
 <h2 id="3a">
 <a class="anchor" href="#3a" aria-hidden="true"><span class="octicon octicon-link"></span></a>3a.</h2>
@@ -161,17 +161,17 @@ window.onload = wrap_img;
 <h3 id="3ai">
 <a class="anchor" href="#3ai" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.a.i.</h3>
 
-<p>This program is meant to provide a more streamline system for business managers to organize and locate their company’s inventory.</p>
+<p>This program is meant to provide a quick and simple method to track the current location of others, in context customers and businesses through their phone numbers.</p>
 
 <h3 id="3aii">
 <a class="anchor" href="#3aii" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.a.ii.</h3>
 
-<p>This program allows a user to not only input entries regarding various attributes of their company’s inventory, such as the price of the product, how much it costs to produce, how long it takes to deliver, the quantity, and any other extra notes. The user does this by first defining under what company name this inventory goes under. This is useful because the feature also allows a search feature, where a user may type in the name of a specific company, and any entries made under that name will appear in a neat, organized table that displays each attribute. These entries are all persistent as well, so even if the page is closed and reopened, the entries remain.</p>
+<p>This program allows a user to not only input their phone number, but the user can also input their own User ID, creating their own unique entires in the API. The user does this by first defining under what name the inputted phone number goes under. These entries are all persistent as well, so even if the page is closed and reopened, the entries remain.</p>
 
 <h3 id="3aiii">
 <a class="anchor" href="#3aiii" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.a.iii.</h3>
 
-<p>The inputs of the program are the user’s typed entries into the form for which entries are made. The program collects this data and returns an input stating whether or not the inventory was successfully added - depending on if the user’s entries met the requirements such as filling out all fields - and then may be called upon to displays its entries within the search feature that neatly formats the attributes in a table.</p>
+<p>The inputs of the program are the user’s typed entries into the form for which User ID and Phone Number are taken. The program collects this data and runs an algorithm in the backend to determine the phone number’s location and timezone - depending on if the user’s entries met the requirements such as filling out all fields - and then update an existing API and completely formats the attributes in a table.</p>
 
 <h2 id="3b">
 <a class="anchor" href="#3b" aria-hidden="true"><span class="octicon octicon-link"></span></a>3b.</h2>
@@ -179,22 +179,22 @@ window.onload = wrap_img;
 <h3 id="3bi">
 <a class="anchor" href="#3bi" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.b.i.</h3>
 
-<p><img src="/firstfastpages/images/cpt1.png" alt=""></p>
+<p><img src="https://user-images.githubusercontent.com/51098969/221749496-f20b4ea9-0f88-42cf-a0d0-1fa4cec8d9f5.jpg" alt="Screenshot 2023-02-27 195428"></p>
 
 <h3 id="3bii">
 <a class="anchor" href="#3bii" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.b.ii.</h3>
 
-<p><img src="/firstfastpages/images/cpt2.png" alt=""></p>
+<p><img src="https://user-images.githubusercontent.com/51098969/221749402-dbf8c084-6894-4dfa-aadb-9829dc2a17b1.jpg" alt="Screenshot 2023-02-27 195329"></p>
 
 <h3 id="3biii">
 <a class="anchor" href="#3biii" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.b.iii.</h3>
 
-<p>The name of the variable representing the collection type is “data”, and “teams” is what populates the collection type through an SQLite Database.</p>
+<p>The name of the variable representing the collection type is “data”.</p>
 
 <h3 id="3biv">
 <a class="anchor" href="#3biv" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.b.iv.</h3>
 
-<p>The data that my list contains is extremely vital to my program since it contains every single unique attribute about the product for the inventory entry. This is absolutely vital to the program as it is able to fetch and store the recieved data in order to populate the tables for when the user searches up the logged inventories of a specific company.</p>
+<p>The data that my list contains is extremely vital to my program since it contains multiple unique attributes about the user’s phone number for the entry. This is absolutely vital to the program as it is able to fetch, create, and store the recieved data in order to populate the tables for when the user decides to view the logged phone numbers of a specific User ID.</p>
 
 <h3 id="3bv">
 <a class="anchor" href="#3bv" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.b.v.</h3>
@@ -207,24 +207,24 @@ window.onload = wrap_img;
 <h3 id="3ci">
 <a class="anchor" href="#3ci" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.c.i.</h3>
 
-<p><img src="/firstfastpages/images/cpt3.png" alt=""></p>
+<p><img src="https://user-images.githubusercontent.com/51098969/221750730-6854376d-d8ef-49fe-ad3e-7d8f16f3bd35.jpg" alt="Screenshot 2023-02-27 200312"></p>
 
 <h3 id="3cii">
 <a class="anchor" href="#3cii" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.c.ii.</h3>
 
-<p><img src="/firstfastpages/images/cpt4.png" alt=""></p>
+<p><img src="https://user-images.githubusercontent.com/51098969/221750978-9e56b26f-89bc-4089-ab89-a1226d02a606.jpg" alt="Screenshot 2023-02-27 200535"></p>
 
 <h3 id="3ciii">
 <a class="anchor" href="#3ciii" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.c.iii.</h3>
 
-<p>The procedure here is <code class="language-plaintext highlighter-rouge">loadInventories</code>. First, it retrieves the DOM element with class teams and deletes all but the first row from its rows collection, effectively clearing its contents. Next, it retrieves the value of an input element with ID user, and if it is an empty string, the function displays an alert and returns. Otherwise, the function makes a fetch request to a local server, passing in the retrieved user value as a query parameter. When the response is received, it is parsed as JSON, and if the resulting array has length greater than zero, the function populates the teams element with a new set of rows, one for each item in the array. This procedure is called in <code class="language-plaintext highlighter-rouge">maybeUser</code>, which then checks if a user has been previously saved in the local storage and if so, it populates the “user” input field with that value and calls a function to load inventory data associated with that user.</p>
+<p>The procedure here is <code class="language-plaintext highlighter-rouge">getPhoneData</code>. First, the function makes a fetch request to the backend, where an app route to an specified API was defined, passing in the retrieved user value as a query parameter. The function then clears the current displayed table. When the response is received, it is parsed as JSON, and if the resulting array has length greater than zero, the function populates the current table with a new set of rows, one for each row that was received. This procedure is called twice when data needs to be fetched, once when the data needs to be initially populated when the site is visited and again when the ‘submit’ button is pressed, which sends a form to the backend and calls a function to load new data associated with that user.</p>
 
 <h3 id="3civ">
 <a class="anchor" href="#3civ" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.c.iv.</h3>
 
-<p><img src="/firstfastpages/images/cpt5.png" alt=""></p>
+<p><img src="https://user-images.githubusercontent.com/51098969/221752597-57318f3a-15d5-4639-8ee1-a22b9f1a3c50.jpg" alt="Screenshot 2023-02-27 201847"></p>
 
-<p>The code defines a function addInventory which starts by collecting input data from a web form using document.getElementById. The function then proceeds to use selection to check if the username field is empty, and if it is, it displays an alert to the user and returns from the function. If the username field is not empty, the function constructs a data object using sequencing, which contains the input values collected earlier. The function then constructs a requestOptions object also using sequencing which includes the data object, and specifies the HTTP method and content type headers for a POST request. The function then uses iteration, in the form of a try-catch block, to handle errors that may occur during the fetch request. Finally, the function uses fetch to send a POST request to a specified URL and logs the success response to the console, as well as displaying an alert to the user.</p>
+<p>My code has the ability to collect input data from a web form using document.getElementById, and proceed to use selection to check if the User ID / Phone Number field is empty or invalid, and if it is, it displays an alert to the user and returns from the function. If the username field is not empty, the function constructs a data object using sequencing, which contains the input values collected earlier. The function then constructs a requestOptions object also using sequencing which includes the data object, and specifies the HTTP method and content type headers for a POST request. The function then uses iteration, in the form of a try-catch block, to handle errors that may occur during the fetch request. Finally, the function uses fetch to send a POST request to a specified URL and logs the success response to the console, as well as displaying an alert to the user.</p>
 
 <h2 id="3d">
 <a class="anchor" href="#3d" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.d</h2>
@@ -234,18 +234,18 @@ window.onload = wrap_img;
 
 <h4 id="call-one">
 <a class="anchor" href="#call-one" aria-hidden="true"><span class="octicon octicon-link"></span></a>Call One</h4>
-<p>The user inputs the attributes of their desired inventory and clicks on the “Add Inventory” button. The first call to addInventory procedure passes a non-empty username and all other required arguments to add a new inventory item to the system. This call will execute the entire algorithm, constructing the data object, constructing the requestOptions object, and sending a POST request to the specified URL with the data object as the request body. If the request is successful, a success message will be logged to the console and an alert will be shown to the user indicating that the inventory has been added.</p>
+<p>The user inputs both the attributes on the form, being the User ID and a valid Phone Number and clicks on the “Submit” button. The first call to procedure passes a non-empty User ID and all other required arguments to add a new entry to the system. This call will send this data to the backend, execute the entire algorithm, constructing the data object, constructing the and sending a POST request to the specified API with the data object as the request body. If the request is successful, a success message will be logged to the console and an alert will be shown to the user indicating that the inventory has been added.</p>
 
 <h4 id="call-two">
 <a class="anchor" href="#call-two" aria-hidden="true"><span class="octicon octicon-link"></span></a>Call Two</h4>
-<p>The second call to addInventory procedure passes an empty string as the username argument. This call will execute only the selection code segment that checks if the username is empty. Since the passed argument is an empty string, the condition in the if statement will evaluate to true, causing an alert to be shown to the user indicating that the entered company is invalid. The rest of the code segments will not execute, and no request will be sent to the server.</p>
+<p>The user inputs both the attributes on the form, being the User ID and a Phone Number, however this Phone Number is invalid and does not exist. This call will execute only the selection code segment that checks if the phone number is valid. Since the passed argument is an invalid Phone Number, an alert will be shown to the user indicating that the entered number is invalid. The rest of the code segments will not execute, and no request will be sent to the server.</p>
 
 <h3 id="3dii">
 <a class="anchor" href="#3dii" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.d.ii.</h3>
 
 <h4 id="conditions-tested-by-call-one">
 <a class="anchor" href="#conditions-tested-by-call-one" aria-hidden="true"><span class="octicon octicon-link"></span></a>Condition(s) tested by Call One</h4>
-<p>The given procedure, addInventory(), includes two conditional statements to test certain conditions. The first conditional statement tests whether the username variable is empty, which is checked using the if statement if (user === “”).</p>
+<p>The given code includes two conditional statements to test certain conditions. The first conditional statement tests whether the username variable is empty, which is checked using the if statement if (user === “”). The second conditional statement includes an if statement “if (!phoneNumberRegex.test(phoneNumberInput.value)) {“ to test the validity of the phone number inputted.</p>
 
 <h4 id="conditions-tested-by-call-two">
 <a class="anchor" href="#conditions-tested-by-call-two" aria-hidden="true"><span class="octicon octicon-link"></span></a>Condition(s) tested by Call Two</h4>
@@ -256,11 +256,11 @@ window.onload = wrap_img;
 
 <h4 id="results-of-call-one">
 <a class="anchor" href="#results-of-call-one" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results of Call One</h4>
-<p>If the username is indeed empty, then an alert is displayed with the message “Invalid company!” and the procedure exits using the return statement.</p>
+<p>If the username is indeed filled and a valid phone number is entered, then an alert is displayed with the message “Data has been entered successfully.” and the procedure continues and delivers using the return statement.</p>
 
 <h4 id="results-of-call-two">
 <a class="anchor" href="#results-of-call-two" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results of Call Two</h4>
-<p>If such an error occurs, then the catch block logs the error to the console using console.error(error).</p>
+<p>If such an error occurs, then the catch block logs the error to the console using console.error(error). An alert is displayed with the message “Invalid phone number format”.</p>
 
   </div><a class="u-url" href="/firstfastpages/trimester%202/2023/02/27/CPT-writeup.html" hidden></a>
 </article>

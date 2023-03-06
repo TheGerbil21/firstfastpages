@@ -4,7 +4,7 @@ title: APCSP Final Exam Blog
 toc: false 
 badges: true
 comments: true
-categories: [jupyter]
+categories: [jupyter, python, tri1, misc]
 nb_path: _notebooks/2022-11-08-APCSP-Final-Blog.ipynb
 layout: notebook
 ---

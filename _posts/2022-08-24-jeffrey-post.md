@@ -5,7 +5,7 @@ title: Jeffrey's First Jupyter Notebook
 toc: false 
 badges: true
 comments: true
-categories: [jupyter]
+categories: [jupyter, tri1, misc]
 nb_path: _notebooks/2022-08-24-jeffrey-post.ipynb
 layout: notebook
 ---

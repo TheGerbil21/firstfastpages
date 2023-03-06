@@ -5,7 +5,7 @@ title: Learning about Lists and Dictionaries with InfoDb
 toc: true
 categories: [TechTalk]
 permalink: /collegeboard/python_lists
-tags: [python]
+tags: [jupyter, python, tri1, concept]
 nb_path: _notebooks/2022-08-29-TP120-python_lists.ipynb
 layout: notebook
 ---

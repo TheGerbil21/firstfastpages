@@ -3,7 +3,7 @@ keywords: fastai
 title: Project Design Proposal
 toc: true
 categories: [TechTalk]
-tags: [python]
+tags: [jupyter, python, tri1, human_prep]
 nb_path: _notebooks/2022-10-07-project-design.ipynb
 layout: notebook
 ---

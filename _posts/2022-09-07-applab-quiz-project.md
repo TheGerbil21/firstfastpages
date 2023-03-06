@@ -4,7 +4,7 @@ description: My starting journey with Javascript, Block Coding in Code.org, and 
 title: Starting Program Design and App Lab Developments
 toc: true
 categories: [TechTalk]
-tags: [java]
+tags: [java, jupyter, tri1, concept]
 nb_path: _notebooks/2022-09-07-applab-quiz-project.ipynb
 layout: notebook
 ---

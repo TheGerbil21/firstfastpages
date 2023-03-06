@@ -4,7 +4,7 @@ title: APCSP Final Reflection and Growth
 toc: false 
 badges: true
 comments: true
-categories: [jupyter]
+categories: [python, jupyter, tri1, misc]
 nb_path: _notebooks/2022-11-10-Personal-Trimester-Growth.ipynb
 layout: notebook
 ---

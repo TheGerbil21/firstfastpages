@@ -4,7 +4,7 @@ title: Scrum Team Outline + Project Purpose
 toc: false 
 badges: true
 comments: true
-categories: [jupyter]
+categories: [jupyter, tri1, human_prep]
 nb_path: _notebooks/2022-09-27-SCRUM-team.ipynb
 layout: notebook
 ---

@@ -3,7 +3,7 @@ keywords: fastai
 title: My API Experience
 toc: true
 categories: [TechTalk]
-tags: [python]
+tags: [jupyter, python, tri1, concept]
 nb_path: _notebooks/2022-10-07-my-API-experience.ipynb
 layout: notebook
 ---

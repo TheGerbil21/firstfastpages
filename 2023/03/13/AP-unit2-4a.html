@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      8 min read
+      11 min read
     
 </span></p>
 
@@ -213,7 +213,7 @@ window.onload = wrap_img;
 <span class="c1"># Setup of key Flask object (app)</span>
 <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 <span class="c1"># Setup SQLAlchemy object and properties for the database (db)</span>
-<span class="n">database</span> <span class="o">=</span> <span class="s1">'sqlite:///files/sqlite.db'</span>  <span class="c1"># path and filename of database</span>
+<span class="n">database</span> <span class="o">=</span> <span class="s1">'sqlite:///sqlite.db'</span>  <span class="c1"># path and filename of database</span>
 <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'SQLALCHEMY_TRACK_MODIFICATIONS'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'SQLALCHEMY_DATABASE_URI'</span><span class="p">]</span> <span class="o">=</span> <span class="n">database</span>
 <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'SECRET_KEY'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'SECRET_KEY'</span>
@@ -483,12 +483,12 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Records exist uid toby, or error.
-Records exist uid niko, or error.
-Records exist uid lex, or error.
-Records exist uid whit, or error.
-Records exist uid indi, or error.
-Records exist uid raven, or error.
+<pre>Created new uid toby
+Created new uid niko
+Created new uid lex
+Created new uid whit
+Created new uid indi
+Created new uid raven
 </pre>
 </div>
 </div>
@@ -749,6 +749,164 @@ Records exist uid raven, or error.
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">""" database dependencies to support sqlite examples """</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy.exc</span> <span class="kn">import</span> <span class="n">IntegrityError</span>
+
+<span class="sd">''' Tutorial: https://www.sqlalchemy.org/library.html#tutorials, try to get into a Python shell and follow along '''</span>
+
+<span class="c1"># Define the User class to manage actions in the 'users' table</span>
+<span class="c1"># -- Object Relational Mapping (ORM) is the key concept of SQLAlchemy</span>
+<span class="c1"># -- a.) db.Model is like an inner layer of the onion in ORM</span>
+<span class="c1"># -- b.) User represents data we want to store, something that is built on db.Model</span>
+<span class="c1"># -- c.) SQLAlchemy ORM is layer on top of SQLAlchemy Core, then SQLAlchemy engine, SQL</span>
+<span class="k">class</span> <span class="nc">Agent</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">'agents'</span>  <span class="c1"># table name is plural, class name is singular</span>
+
+    <span class="c1"># Define the User schema with "vars" from object</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">_agentname</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">_role</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">_ability_basic1</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">_ability_basic2</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">_ability_signature</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">_ability_ultimate</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># constructor of a User object, initializes the instance variables within object (self)</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agentname</span><span class="p">,</span> <span class="n">role</span><span class="p">,</span> <span class="n">ability_basic1</span><span class="p">,</span> <span class="n">ability_basic2</span><span class="p">,</span> <span class="n">ability_signature</span><span class="p">,</span> <span class="n">ability_ultimate</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_agentname</span> <span class="o">=</span> <span class="n">agentname</span>    <span class="c1"># variables with self prefix become part of the object, </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_role</span> <span class="o">=</span> <span class="n">role</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ability_basic1</span> <span class="o">=</span> <span class="n">ability_basic1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ability_basic2</span> <span class="o">=</span> <span class="n">ability_basic2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ability_signature</span> <span class="o">=</span> <span class="n">ability_signature</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ability_ultimate</span> <span class="o">=</span> <span class="n">ability_ultimate</span>
+
+    <span class="c1"># a name getter method, extracts name from object</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">agentname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_agentname</span>
+    
+    <span class="c1"># a setter function, allows name to be updated after initial object creation</span>
+    <span class="nd">@agentname</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">agentname</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">agentname</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_agentname</span> <span class="o">=</span> <span class="n">agentname</span>
+    
+    <span class="c1"># a getter method, extracts uid from object</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">role</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_role</span>
+    
+    <span class="c1"># a setter function, allows uid to be updated after initial object creation</span>
+    <span class="nd">@role</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">role</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">role</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_role</span> <span class="o">=</span> <span class="n">role</span>
+    
+    <span class="c1"># a getter method, extracts ability_basic1 from object</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">ability_basic1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ability_basic1</span>
+    
+    <span class="c1"># a setter function, allows ability_basic1 to be updated after initial object creation</span>
+    <span class="nd">@ability_basic1</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">ability_basic1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ability_basic1</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ability_basic1</span> <span class="o">=</span> <span class="n">ability_basic1</span>
+
+    <span class="c1"># a getter method, extracts ability_basic2 from object</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">ability_basic2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ability_basic2</span>
+    
+    <span class="c1"># a setter function, allows ability_basic2 to be updated after initial object creation</span>
+    <span class="nd">@ability_basic2</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">ability_basic2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ability_basic2</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ability_basic2</span> <span class="o">=</span> <span class="n">ability_basic2</span>
+
+    <span class="c1"># a getter method, extracts ability_signature from object</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">ability_signature</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ability_signature</span>
+    
+    <span class="c1"># a setter function, allows ability_signature to be updated after initial object creation</span>
+    <span class="nd">@ability_signature</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">ability_signature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ability_signature</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ability_signature</span> <span class="o">=</span> <span class="n">ability_signature</span>
+
+    <span class="c1"># a getter method, extracts ability_ultimate from object</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">ability_ultimate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ability_ultimate</span>
+    
+    <span class="c1"># a setter function, allows ability_ultimate to be updated after initial object creation</span>
+    <span class="nd">@ability_ultimate</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">ability_ultimate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ability_ultimate</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ability_ultimate</span> <span class="o">=</span> <span class="n">ability_ultimate</span>
+    
+    <span class="c1"># output content using str(object) is in human readable form</span>
+    <span class="c1"># output content using json dumps, this is ready for API response</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+
+    <span class="c1"># CRUD create/add a new record to the table</span>
+    <span class="c1"># returns self or None on error</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># creates a person object from User(db.Model) class, passes initializers</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>  <span class="c1"># add prepares to persist person object to Users table</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>  <span class="c1"># SqlAlchemy "unit of work pattern" requires a manual commit</span>
+            <span class="k">return</span> <span class="bp">self</span>
+        <span class="k">except</span> <span class="n">IntegrityError</span><span class="p">:</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="c1"># CRUD read converts self to dictionary</span>
+    <span class="c1"># returns dictionary</span>
+    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">"id"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+            <span class="s2">"name"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="s2">"uid"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">uid</span><span class="p">,</span>
+            <span class="s2">"dob"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">dob</span><span class="p">,</span>
+            <span class="s2">"age"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">,</span>
+        <span class="p">}</span>
+
+    <span class="c1"># CRUD update: updates user name, password, phone</span>
+    <span class="c1"># returns self</span>
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">uid</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s2">""</span><span class="p">):</span>
+        <span class="sd">"""only updates values with length"""</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">uid</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">uid</span> <span class="o">=</span> <span class="n">uid</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">password</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="n">password</span><span class="p">)</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="c1"># CRUD delete: remove self</span>
+    <span class="c1"># None</span>
+    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 

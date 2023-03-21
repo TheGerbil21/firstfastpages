@@ -132,7 +132,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#Initial-Data">Initial Data </a></li>
 <li class="toc-entry toc-h2"><a href="#Create-Function">Create Function </a></li>
 <li class="toc-entry toc-h2"><a href="#Read">Read </a></li>
-<li class="toc-entry toc-h2"><a href="#Update-(Currently-Only-Able-to-Change-Role-Parameter,-may-add-the-others-later)">Update (Currently Only Able to Change Role Parameter, may add the others later) </a></li>
+<li class="toc-entry toc-h2"><a href="#Update-(Currently-Only-Able-to-Change-Ability_Ultimate-Parameter,-may-add-the-others-later)">Update (Currently Only Able to Change Ability_Ultimate Parameter, may add the others later) </a></li>
 <li class="toc-entry toc-h2"><a href="#Delete">Delete </a></li>
 <li class="toc-entry toc-h2"><a href="#Menu-with-CRUD-Operations:">Menu with CRUD Operations: </a></li>
 </ul>
@@ -1202,8 +1202,8 @@ Records exist uid None, or error.
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Update-(Currently-Only-Able-to-Change-Role-Parameter,-may-add-the-others-later)">
-<a class="anchor" href="#Update-(Currently-Only-Able-to-Change-Role-Parameter,-may-add-the-others-later)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Update (Currently Only Able to Change Role Parameter, may add the others later)<a class="anchor-link" href="#Update-(Currently-Only-Able-to-Change-Role-Parameter,-may-add-the-others-later)"> </a>
+<h2 id="Update-(Currently-Only-Able-to-Change-Ability_Ultimate-Parameter,-may-add-the-others-later)">
+<a class="anchor" href="#Update-(Currently-Only-Able-to-Change-Ability_Ultimate-Parameter,-may-add-the-others-later)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Update (Currently Only Able to Change Ability_Ultimate Parameter, may add the others later)<a class="anchor-link" href="#Update-(Currently-Only-Able-to-Change-Ability_Ultimate-Parameter,-may-add-the-others-later)"> </a>
 </h2>
 </div>
 </div>
@@ -1219,8 +1219,8 @@ Records exist uid None, or error.
 
 <span class="k">def</span> <span class="nf">update</span><span class="p">():</span>
     <span class="n">agentname</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter agent name to update:"</span><span class="p">)</span>
-    <span class="n">role</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter updated role:"</span><span class="p">)</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">role</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">ability_ultimate</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter updated ultimate ability:"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ability_ultimate</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">message</span> <span class="o">=</span> <span class="s2">"Not updated. How did you even get this error?"</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">message</span> <span class="o">=</span> <span class="s2">"successfully updated."</span>
@@ -1233,12 +1233,12 @@ Records exist uid None, or error.
 
     <span class="k">try</span><span class="p">:</span>
         <span class="c1"># Execute an SQL command to update data in a table</span>
-        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"UPDATE agents SET _role = ? WHERE _agentname = ?"</span><span class="p">,</span> <span class="p">(</span><span class="n">role</span><span class="p">,</span> <span class="n">agentname</span><span class="p">))</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"UPDATE agents SET _ability_ultimate = ? WHERE _agentname = ?"</span><span class="p">,</span> <span class="p">(</span><span class="n">ability_ultimate</span><span class="p">,</span> <span class="n">agentname</span><span class="p">))</span>
         <span class="k">if</span> <span class="n">cursor</span><span class="o">.</span><span class="n">rowcount</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="c1"># The uid was not found in the table</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"No agent </span><span class="si">{</span><span class="n">agentname</span><span class="si">}</span><span class="s2"> was not found in the table"</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The row with agent </span><span class="si">{</span><span class="n">agentname</span><span class="si">}</span><span class="s2"> the role has been </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The row with agent </span><span class="si">{</span><span class="n">agentname</span><span class="si">}</span><span class="s2"> the ultimate ability has been </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
             <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
     <span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"Error while executing the UPDATE:"</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
@@ -1260,7 +1260,7 @@ Records exist uid None, or error.
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The row with agent a the role has been successfully updated.
+<pre>The row with agent Jett the ultimate ability has been successfully updated.
 </pre>
 </div>
 </div>
@@ -1385,7 +1385,7 @@ Records exist uid None, or error.
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The row with agent name  was successfully deleted
+<pre>The row with agent Jett the ultimate ability has been successfully updated.
 </pre>
 </div>
 </div>

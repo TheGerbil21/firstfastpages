@@ -18,10 +18,10 @@ week: 29
 > As we have learned, a computer needs aa program to do something smart.  The sequence of a program initiates a series of actions with the computers Central Processing Unit (CPU). This component is essentially a binary machine focussing on program instructions provided.  The CPU retrieives and stores the data it acts upon in Random Access Memory (RAM). Between the CPU, RAM, and Storage Devices a computer can work with many programs and large amounts of data.
 
 List specification of your Computer, or Computers if working as Pair/Trio
-- Processor GHz:
-- Memory in GB:
-- Storage in GB:
-- OS:
+- Processor GHz: 3.80
+- Memory in GB: 64
+- Storage in GB: 1024
+- OS: Windows 11
 
 Define or describe usage of Computer using Computer Programs. Pictures are preferred over a lot of text.  Use your experience.
 - Input devices: lets a user interact with the computer- mouse, microphone, keyboard
@@ -121,7 +121,7 @@ The "network" layer is responsible for ***routing data packets between networks*
 > Watch both Daily videos for 4.2
 
 - Complete the network activity, summarize your understanding of fault tolerance.
-Fault tolerance is a process that lets an OS respond to failure in the hardware or software. So the system won’t break down completely due to an error or failure.
+**Fault tolerance is a process that lets an OS respond to failure in the hardware or software. So the system won’t break down completely due to an error or failure.**
 
 ### Parallel and Distributed Computing
 > Review previous lecture on Parallel Computing and watch Daily vidoe 4.3.  Think of ways to make something in you team project to utilize Cores more effectively.  Here are some thoughts to add to your story of Computers and Networks...
